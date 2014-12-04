@@ -259,6 +259,14 @@ ul {
   margin-right: auto
 }
 
+.image-avatar-small {
+  border-radius: 15%;
+  width: 23px;
+  height: 23px;
+  margin-left: 0;
+  margin-right: 0
+}
+
 .image-hero {
   height: auto;
   width: 100%;

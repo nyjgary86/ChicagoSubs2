@@ -2,6 +2,7 @@ require 'open-uri'
 require 'json'
 
 class ApartmentsController < ApplicationController
+
   def index
     @search = Apartment.search(params[:q])
     @apartments = @search.result
@@ -16,6 +17,10 @@ class ApartmentsController < ApplicationController
     parsed_data = JSON.parse(raw_data)
     @the_latitude = parsed_data["results"][0]["geometry"]["location"]["lat"].to_s
     @the_longitude = parsed_data["results"][0]["geometry"]["location"]["lng"].to_s
+  end
+
+  def current_user_apartments
+    @apartments = current_user.apartments
   end
 
   def new
