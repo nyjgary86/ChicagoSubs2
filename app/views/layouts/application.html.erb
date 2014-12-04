@@ -59,7 +59,8 @@
             <%= current_user.first_name %>&nbsp;<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="/users/dashboard">Account Overview</a></li>
-              <li><a href="/users/edit">Edit Info</a></li>
+              <li><a href="/users/edit_profile">Edit Profile</a></li>
+              <li><a href="/users/edit">Change Password</a></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
             </ul>
           </li>
