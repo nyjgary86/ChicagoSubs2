@@ -1,6 +1,8 @@
 class ApartmentsController < ApplicationController
   def index
-    @apartments = Apartment.all
+    @search = Apartment.search(params[:q])
+    @apartments = @search.result
+    # @apartments = Apartment.all
   end
 
   def show

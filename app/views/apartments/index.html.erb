@@ -1,88 +1,106 @@
-<div class="page-header">
-  <h1>Apartments</h1>
-</div>
 
-<p><a href="/apartments/new" class="btn btn-primary">Add a New Apartment</a></p>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Apttype</th>
-      <th>Size</th>
-      <th>Price</th>
-      <th>Startdate</th>
-      <th>Enddate</th>
-      <th>Neighborhood</th>
-      <th>Streetadd</th>
-      <th>Unit</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Furnished</th>
-      <th>Ac</th>
-      <th>Gym</th>
-      <th>Pool</th>
-      <th>Doorman</th>
-      <th>Elevator</th>
-      <th>Internet</th>
-      <th>Cable</th>
-      <th>Laundryu</th>
-      <th>Laundryb</th>
-      <th>Headline</th>
-      <th>Description</th>
-      <th>Pictureurl</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<body>
+  <div class="content-container">
 
-  <tbody>
-    <% @apartments.each do |apartment| %>
-      <tr>
-        <td><%= apartment.apttype %></td>
-        <td><%= apartment.size %></td>
-        <td><%= apartment.price %></td>
-        <td><%= apartment.startdate %></td>
-        <td><%= apartment.enddate %></td>
-        <td><%= apartment.neighborhood %></td>
-        <td><%= apartment.streetadd %></td>
-        <td><%= apartment.unit %></td>
-        <td><%= apartment.city %></td>
-        <td><%= apartment.state %></td>
-        <td><%= apartment.zip %></td>
-        <td><%= apartment.furnished %></td>
-        <td><%= apartment.ac %></td>
-        <td><%= apartment.gym %></td>
-        <td><%= apartment.pool %></td>
-        <td><%= apartment.doorman %></td>
-        <td><%= apartment.elevator %></td>
-        <td><%= apartment.internet %></td>
-        <td><%= apartment.cable %></td>
-        <td><%= apartment.laundryu %></td>
-        <td><%= apartment.laundryb %></td>
-        <td><%= apartment.headline %></td>
-        <td><%= apartment.description %></td>
-        <td><%= apartment.pictureurl %></td>
-        <td><%= apartment.user_id %></td>
-        <td>
-          <a href="/apartments/<%= apartment.id %>" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/apartments/<%= apartment.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
-        </td>
-        <td>
-          <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="column6">
+
+      <div class="page-header">
+        <h1>Apartments</h1>
+      </div>
+
+      <% @apartments.each do |apartment| %>
+
+        <div class="entry-container">
+
+          <div class = "entry-left">
+              <ul>
+                <li>
+                  <img class="image-listing" src=<%= apartment.pictureurl %>>
+                  <div class="clearfix"></div>
+                </li>
+              </ul>
+          </div>
+
+          <div class = "entry-mid">
+            <h2><%= apartment.headline%></h2></a>
+            <ul>
+              <li>
+                <div class="entry-neighborhood">
+                  <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                  <%= apartment.neighborhood%>
+                  </div>
+                <div class="clearfix"></div>
+              </li>
+              <li>
+                <div class="entry-type">
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                  <%= apartment.apttype %> (<%= apartment.size %>)
+                </div>
+                <div class="clearfix"></div>
+              </li>
+              <li>
+                <div class="entry-period">
+                  <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                  <%= apartment.startdate %> - <%= apartment.enddate %>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class = "entry-right">
+            <h3>$<%= apartment.price %></h3>
+            <h4>per month</h4>
+          </div>
+
+        </div>
+      <% end %>
+      <p><a href="/apartments/new" class="btn btn-primary">Add a New Apartment</a></p>
+    </div>
+
+    <div class="column4-padding">
+      <div class="page-header">
+        <h1>Filter Listings</h1>
+      </div>
+      <div class="filter-container">
+        <div class="subcolumn3">
+
+          <%= search_form_for @search do |f| %>
+            <div class="field">
+              <%= f.label :neighborhood_cont, "Neighborhood" %>
+              <%= f.text_field :neighborhood_cont, :class => "form-control" %>
+
+              <%= f.select :neighborhood_cont, ["1", "2", "3"] %>
+            </div>
+            <div class="actions"><%= f.submit "Filter" %></div>
+          <% end %>
+
+          <br>
+          <ul>
+            <li>Dates:</li>
+            <br>
+            <li>Price:</li>
+            <br>
+            <li>Neighborhood:</li>
+            <li>Room Type:</li>
+            <br><br>
+            <li>Features:</li>
+          </ul>
+        </div>
+
+        <div class="subcolumn7">
+          <input type="text" id="datepicker">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+
 
