@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   get('/users/dashboard', { :controller => 'users', :action => 'dashboard'})
   get('/users/edit_profile', { :controller => 'users', :action => 'edit_profile'})
+  get('/users/update_profile', { :controller => 'users', :action => 'update_profile'})
 
   # get('/users', { :controller => 'users', :action => 'index' })
   # get('/users/:id', { :controller => 'users', :action => 'show' })

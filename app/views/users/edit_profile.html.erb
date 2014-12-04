@@ -1,4 +1,192 @@
+<% if current_user.errors.any? %>
+  <% current_user.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
 <div class="page-header">
   <h1>Edit Profile</h1>
 </div>
 
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+  <form action="/users/update_profile" class="form-horizontal">
+
+    <div class="form-group">
+      <label for="email" class="col-sm-2 control-label">
+        Email
+      </label>
+      <div class="col-sm-10">
+        <input type="email" name="email" class="form-control" readonly value="<%= current_user.email %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="first_name" class="col-sm-2 control-label">
+        First Name
+      </label>
+      <div class="col-sm-10">
+        <input type="text" name="first_name" class="form-control" value="<%= current_user.first_name %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="last_name" class="col-sm-2 control-label">
+        Last Name
+      </label>
+      <div class="col-sm-10">
+        <input type="text" name="last_name" class="form-control" value="<%= current_user.last_name %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="university" class="col-sm-2 control-label">
+        University
+      </label>
+      <div class="col-sm-10">
+        <select class="form-control" id="university" name="university" value=<%= current_user.university %>>
+          <option>Adler School of Professional Psychology</option>
+          <option>American Academy of Art</option>
+          <option>Argosy University-Chicago</option>
+          <option>Argosy University-Schaumburg</option>
+          <option>Augustana College</option>
+          <option>Aurora University</option>
+          <option>Benedictine University</option>
+          <option>Blackburn College</option>
+          <option>Blessing Rieman College of Nursing</option>
+          <option>Bradley University</option>
+          <option>Catholic Theological Union at Chicago</option>
+          <option>Chamberlain College of Nursing–Addison Campus</option>
+          <option>Chicago School of Professional Psychology</option>
+          <option>Chicago State University</option>
+          <option>Chicago Theological Seminary</option>
+          <option>Christian Life College</option>
+          <option>Columbia College Chicago</option>
+          <option>Concordia University</option>
+          <option>DePaul University</option>
+          <option>DeVry University-Illinois</option>
+          <option>Dominican University</option>
+          <option>East-West University</option>
+          <option>Eastern Illinois University</option>
+          <option>Elmhurst College</option>
+          <option>Erikson Institute</option>
+          <option>Eureka College</option>
+          <option>Garrett-Evangelical Theological Seminary</option>
+          <option>Governors State University</option>
+          <option>Greenville College</option>
+          <option>Harrington College of Design</option>
+          <option>Hebrew Theological College</option>
+          <option>Illinois College</option>
+          <option>Illinois College of Optometry</option>
+          <option>Illinois Institute of Technology</option>
+          <option>Illinois State University</option>
+          <option>Illinois Wesleyan University</option>
+          <option>Ingalls Memorial Hospital Dietetic Internship</option>
+          <option>Institute for Clinical Social Work</option>
+          <option>International Academy of Design and Technology</option>
+          <option>ITT Technical Institute-Burr Ridge</option>
+          <option>ITT Technical Institute-Mount Prospect</option>
+          <option>ITT Technnical Institute-Orland Park</option>
+          <option>Judson University</option>
+          <option>Kendall College</option>
+          <option>Knowledge Systems Institute</option>
+          <option>Knox College</option>
+          <option>Lake Forest College</option>
+          <option>Lake Forest Graduate School of Management</option>
+          <option>Lakeview College of Nursing</option>
+          <option>Lewis University</option>
+          <option>Lexington College</option>
+          <option>Lincoln Christian College and Seminary</option>
+          <option>Lincoln College</option>
+          <option>Loyola University Chicago</option>
+          <option>Lutheran School of Theology at Chicago</option>
+          <option>MacMurray College</option>
+          <option>McCormick Theological Seminary</option>
+          <option>McKendree University</option>
+          <option>Meadville Lombard Theological School</option>
+          <option>Methodist College of Nursing</option>
+          <option>Midstate College</option>
+          <option>Midwestern University</option>
+          <option>Millikin University</option>
+          <option>Monmouth College</option>
+          <option>National University of Health Sciences</option>
+          <option>National-Louis University</option>
+          <option>North Central College</option>
+          <option>North Park University</option>
+          <option>Northeastern Illinois University</option>
+          <option>Northern Illinois University</option>
+          <option>NorthShore University HealthSystems School of Nurse Anesthesia</option>
+          <option>Northwestern University</option>
+          <option>Olivet Nazarene University</option>
+          <option>Pacific College of Oriental Medicine</option>
+          <option>Quincy University</option>
+          <option>Robert Morris College</option>
+          <option>Rockford College</option>
+          <option>Roosevelt University</option>
+          <option>Rosalind Franklin University of Medicine and Science</option>
+          <option>Rush University</option>
+          <option>Saint Anthony College of Nursing</option>
+          <option>Saint Augustine College</option>
+          <option>Saint Francis Medical Center College of Nursing</option>
+          <option>Saint Xavier University</option>
+          <option>School of the Art Institute of Chicago</option>
+          <option>Seabury-Western Theological Seminary</option>
+          <option>Shimer College</option>
+          <option>Southern Illinois University Carbondale</option>
+          <option>Southern Illinois University Edwardsville</option>
+          <option>Spertus College</option>
+          <option>St Johns College</option>
+          <option>Telshe Yeshiva-Chicago</option>
+          <option>The Illinois Institute of Art-Chicago</option>
+          <option>The Illinois Institute of Art-Schaumburg</option>
+          <option>The John Marshall Law School</option>
+          <option>Trinity Christian College</option>
+          <option>Trinity College of Nursing and Health Sciences</option>
+          <option>Trinity International University</option>
+          <option>University of Chicago</option>
+          <option>University of Illinois at Chicago</option>
+          <option>University of Illinois at Springfield</option>
+          <option>University of Illinois at Urbana-Champaign</option>
+          <option>University of Saint Mary of the Lake</option>
+          <option>University of St Francis</option>
+          <option>VanderCook College of Music</option>
+          <option>West Suburban College of Nursing</option>
+          <option>Western Illinois University</option>
+          <option>Westwood College-Chicago Loop</option>
+          <option>Westwood College-Dupage</option>
+          <option>Westwood College-O'Hare Airport</option>
+          <option>Westwood College-River Oaks</option>
+          <option>Wheaton College</option>
+        </select>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label for="introduction" class="col-sm-2 control-label">
+          Introduction
+        </label>
+        <div class="col-sm-10">
+          <textarea id="introduction" name="introduction" placeholder="Introduction" class="form-control" rows="5"><%= current_user.introduction %></textarea>
+        </div>
+      </div>
+
+    <div class="form-group">
+      <label for="profile_pic" class="col-sm-2 control-label">
+        Profile Picture
+      </label>
+      <div class="col-sm-10">
+        <input type="text" name="profile_pic" class="form-control" value="<%= current_user.profile_pic %>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" value="Update User" class="btn btn-primary">
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
