@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   # READ
   get('/users', { :controller => 'users', :action => 'index' })
-  get('/users/:id', { :controller => 'users', :action => 'show' })
+  # get('/users/:id', { :controller => 'users', :action => 'show' })
 
   # UPDATE
   # get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
