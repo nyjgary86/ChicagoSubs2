@@ -1,12 +1,21 @@
+require 'open-uri'
+require 'json'
+
 class ApartmentsController < ApplicationController
   def index
     @search = Apartment.search(params[:q])
     @apartments = @search.result
-    # @apartments = Apartment.all
   end
 
   def show
     @apartment = Apartment.find(params[:id])
+    apartment_address = @apartment.streetadd + " Chicago IL " + @apartment.zip.to_s
+    url_safe_address = URI.encode(apartment_address)
+    full_url = "http://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_address
+    raw_data = open(full_url).read
+    parsed_data = JSON.parse(raw_data)
+    @the_latitude = parsed_data["results"][0]["geometry"]["location"]["lat"].to_s
+    @the_longitude = parsed_data["results"][0]["geometry"]["location"]["lng"].to_s
   end
 
   def new

@@ -1,81 +1,176 @@
+<!-- Javascript for Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(<%=@the_latitude%>, <%=@the_longitude%>);
+    var mapOptions = {
+      zoom: 15,
+      center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'Hello World!'
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
 <div class="page-header">
-  <h1>Apartment #<%= @apartment.id %></h1>
+  <h1><%= @apartment.headline %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Apttype</dt>
-  <dd><%= @apartment.apttype %></dd>
+<div class="content-container">
 
-  <dt>Size</dt>
-  <dd><%= @apartment.size %></dd>
+  <div class="details-top-container">
 
-  <dt>Price</dt>
-  <dd><%= @apartment.price %></dd>
+    <div class="column6">
 
-  <dt>Startdate</dt>
-  <dd><%= @apartment.startdate %></dd>
+      <image class="image-hero" src= <%=@apartment.pictureurl%>>
 
-  <dt>Enddate</dt>
-  <dd><%= @apartment.enddate %></dd>
+    </div>
 
-  <dt>Neighborhood</dt>
-  <dd><%= @apartment.neighborhood %></dd>
+    <div class="column4">
 
-  <dt>Streetadd</dt>
-  <dd><%= @apartment.streetadd %></dd>
+      <div class="details-map-container" id="map-canvas">
 
-  <dt>Unit</dt>
-  <dd><%= @apartment.unit %></dd>
+      </div>
+      <div class="details-below-map-container">
+        <div class="details-price-container">
+          <h3>$<%= @apartment.price %></h3>
+          <h4>per month</h4>
+        </div>
+        <div class="details-features-container">
+          <ul>
+            <li>
+              <div class="entry-neighborhood">
+                <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                <%= @apartment.neighborhood %>
+                </div>
+              <div class="clearfix"></div>
+            </li>
+            <li>
+              <div class="entry-type">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                <%= @apartment.apttype %> (<%= @apartment.size %>)
+              </div>
+              <div class="clearfix"></div>
+            </li>
+            <li>
+              <div class="entry-period">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                <%= @apartment.startdate %> - <%= @apartment.enddate %>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <dt>City</dt>
-  <dd><%= @apartment.city %></dd>
+  </div>
 
-  <dt>State</dt>
-  <dd><%= @apartment.state %></dd>
+  <div class="details-bottom-container">
+    <div class="column6">
+      <div class="details-description-container">
+        <h2>Description:</h2>
+        <p><%= @apartment.description %></p>
+      </div>
+      <div class="details-amenities-container">
+        <h2>Amenities:</h2>
+        <ul>
+          <li>
+            <% if @apartment.furnished %>
+            <i class="fa fa-check-square"></i> Furnished
+            <% else %>
+            <i class="fa fa-square-o"></i> Furnished
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.ac %>
+            <i class="fa fa-check-square"></i> Air-Conditioning
+            <% else %>
+            <i class="fa fa-square-o"></i> Air-Conditioning
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.gym %>
+            <i class="fa fa-check-square"></i> Gym
+            <% else %>
+            <i class="fa fa-square-o"></i> Gym
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.pool %>
+            <i class="fa fa-check-square"></i> Pool
+            <% else %>
+            <i class="fa fa-square-o"></i> Pool
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.doorman %>
+            <i class="fa fa-check-square"></i> Doorman
+            <% else %>
+            <i class="fa fa-square-o"></i> Doorman
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.elevator %>
+            <i class="fa fa-check-square"></i> Elevator
+            <% else %>
+            <i class="fa fa-square-o"></i> Elevator
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.internet %>
+            <i class="fa fa-check-square"></i> Internet
+            <% else %>
+            <i class="fa fa-square-o"></i> Internet
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.cable %>
+            <i class="fa fa-check-square"></i> Cable
+            <% else %>
+            <i class="fa fa-square-o"></i> Cable
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.laundryu %>
+            <i class="fa fa-check-square"></i> Laundry in Unit
+            <% else %>
+            <i class="fa fa-square-o"></i> Laundry in Unit
+            <% end %>
+          </li>
+          <li>
+            <% if @apartment.laundryb %>
+            <i class="fa fa-check-square"></i> Laundry in Building
+            <% else %>
+            <i class="fa fa-square-o"></i> Laundry in Building
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <dt>Zip</dt>
-  <dd><%= @apartment.zip %></dd>
+    <div class="column4">
+      <div class="details-contact-container">
+        <h2>Get to know your host:</h2>
+        <br>
+        <img class = "image-avatar" src=<%=@apartment.user.profile_pic%>>
+        <h1><%=@apartment.user.first_name%></h1>
+        <h4><%=@apartment.user.university%></h4>
+        <br>
+        <p>Current MBA student at University of Chicago. Born and raised in Singapore but have been living in the U.S. for the past eight years. Also completed exchanges in Beijing and London during my undergrad years. Love traveling and enjoy making new friends from different cultures!</p>
+        <br>
+        <a href="mailto:<%=@apartment.user.email%>" class="btn btn-primary btn-block">Contact Host</a>
+      </div>
+    </div>
 
-  <dt>Furnished</dt>
-  <dd><%= @apartment.furnished %></dd>
+  </div>
 
-  <dt>Ac</dt>
-  <dd><%= @apartment.ac %></dd>
-
-  <dt>Gym</dt>
-  <dd><%= @apartment.gym %></dd>
-
-  <dt>Pool</dt>
-  <dd><%= @apartment.pool %></dd>
-
-  <dt>Doorman</dt>
-  <dd><%= @apartment.doorman %></dd>
-
-  <dt>Elevator</dt>
-  <dd><%= @apartment.elevator %></dd>
-
-  <dt>Internet</dt>
-  <dd><%= @apartment.internet %></dd>
-
-  <dt>Cable</dt>
-  <dd><%= @apartment.cable %></dd>
-
-  <dt>Laundryu</dt>
-  <dd><%= @apartment.laundryu %></dd>
-
-  <dt>Laundryb</dt>
-  <dd><%= @apartment.laundryb %></dd>
-
-  <dt>Headline</dt>
-  <dd><%= @apartment.headline %></dd>
-
-  <dt>Description</dt>
-  <dd><%= @apartment.description %></dd>
-
-  <dt>Pictureurl</dt>
-  <dd><%= @apartment.pictureurl %></dd>
-
-  <dt>User</dt>
-  <dd><%= @apartment.user_id %></dd>
-
-</dl>
+</div>
