@@ -11,30 +11,30 @@
 
       <div class="panel-body">
         <br>
-        <img class = "image-avatar" src=<%=@user.profile_pic%>>
+        <img class = "image-avatar" src=<%= current_user.profile_pic%>>
         <br>
         <dl class="dl-horizontal">
           <dt>Name</dt>
-          <dd><%= @user.first_name %></dd>
+          <dd><%= current_user.first_name %></dd>
           <br>
           <dt>Email</dt>
-          <dd><%= @user.email %></dd>
+          <dd><%= current_user.email %></dd>
           <br>
           <dt>University</dt>
-          <dd><%= @user.university %></dd>
+          <dd><%= current_user.university %></dd>
           <br>
           <dt>Introduction</dt>
-          <dd><%= @user.introduction %></dd>
+          <dd><%= current_user.introduction %></dd>
         </dl>
 
         <div class="panel-icons">
-            <a href="/users/<%= @user.id %>/edit" class="btn btn-warning">
+            <a href="#" class="btn btn-warning">
               Edit Account
               <i class="fa fa-edit"></i>
             </a>
           </td>
           <td>
-            <a href="/delete_user/<%= @user.id %>" class="btn btn-danger">
+            <a href="#" class="btn btn-danger">
               Delete Account
               <i class="fa fa-trash-o"></i>
             </a>
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <% @user.apartments.each do |apartment| %>
+    <% current_user.apartments.each do |apartment| %>
     <div class="entry-container">
 
       <div class = "entry-left-user">

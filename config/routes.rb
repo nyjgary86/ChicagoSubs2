@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   # get('/create_user/:id', { :controller => 'users', :action => 'create' })
 
   # READ
-  get('/users', { :controller => 'users', :action => 'index' })
+
+  get('/users/dashboard', { :controller => 'users', :action => 'dashboard'})
+
+  # get('/users', { :controller => 'users', :action => 'index' })
   # get('/users/:id', { :controller => 'users', :action => 'show' })
 
   # UPDATE
