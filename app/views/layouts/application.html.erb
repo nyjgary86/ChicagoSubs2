@@ -62,6 +62,8 @@
               <li><a href="/users/edit_profile">Edit Profile</a></li>
               <li><a href="/users/edit">Change Password</a></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Delete account', registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></li>
             </ul>
           </li>
 
