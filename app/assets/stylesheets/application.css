@@ -13,3 +13,308 @@
  *= require_tree .
  *= require_self
  */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  }
+
+td, th {
+  padding: 0.5rem;
+  text-align: left;
+  vertical-align: center;
+  border-bottom: 1px solid lightgray;
+  }
+
+.avatar {
+  border-radius: 50%
+  }
+
+h1  {
+/*  color: rgba(150, 0, 50, 1);*/
+  font-size: 24pt;
+  font-weight: bold;
+  padding-left: 10px;
+  font-variant: small-caps;
+}
+
+h2 {
+/*      background-color: rgba(150, 0, 50, 1);*/
+/*  color: rgba(150, 0, 50, 1);*/
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+
+}
+
+h3 {
+  color: #585858;
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20pt;
+  margin-bottom: 5pt;
+  padding: 0;
+/*      text-align: center;*/
+}
+
+h4 {
+  font-size: 10pt;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+
+/*    .card {*/
+/*      border: 1px rgba(150, 0, 50, 1) solid;*/
+/*      border-radius: 20px;*/
+/*      margin-bottom: 10px;*/
+/*      box-shadow: 2px 2px 5px 0 gray;*/
+/*      height: 100%;
+}*/
+
+
+.content-container {
+  width: 1200px;
+  height: 1000px;
+/*  margin-top: 50px;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column6 {
+  float: left;
+  width: 60%;
+  height: 100%;
+/*  border: 1px red dotted;*/
+}
+
+.column4-padding {
+  float: left;
+  width: 40%;
+  padding-left: 30px;
+  height: 100%;
+}
+
+.column4 {
+  float: left;
+  width: 40%;
+  height: 100%;
+/*  border: 1px red dotted;*/
+}
+
+.subcolumn3 {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 100%;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.subcolumn7 {
+  float: left;
+  width: 70%;
+  padding: 10px;
+  height: 100%;
+}
+
+.filter-container {
+  float: left;
+  width: 100%;
+  height: 500px;
+/*  border: 1px #BDBDBD dotted;*/
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.details-top-container {
+  float: left;
+  width: 100%;
+  height: 360pt;
+}
+
+.details-bottom-container {
+  float: left;
+  width: 100%;
+  height: auto;
+  vertical-align: center;
+  margin-top: 10px;
+}
+
+.details-map-container {
+  float: left;
+  width: 100%;
+  height: 75%;
+}
+
+.map-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.details-below-map-container {
+  float: left;
+  width: 100%;
+  height: 25%;
+  border: 1px darkgray solid;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 0 gray;
+}
+
+.details-price-container {
+  float: left;
+  width: 35%;
+  height: 100%;
+/*  border: 1px #BDBDBD dotted;*/
+}
+
+.details-features-container {
+  float: left;
+  width: 65%;
+  height: 100%;
+  padding-top: 15px;
+/*  border: 1px #BDBDBD dotted;*/
+}
+
+.details-description-container {
+  float: left;
+  width: 75%;
+  height: auto;
+  padding-right: 20px;
+/*  border: 1px #BDBDBD dotted;*/
+}
+
+.details-amenities-container {
+  float: left;
+  width: auto;
+  height: auto;
+/*  border: 1px #BDBDBD dotted;*/
+}
+
+.details-contact-container {
+  float: left;
+/*  border: 1px #BDBDBD dotted;*/
+  text-align: center;
+}
+
+.entry-container {
+  float: left;
+  width: 100%;
+  height: 120px;
+  border: 1px #BDBDBD solid;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.entry-left {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.entry-mid {
+  float: left;
+  width: 55%;
+  height: 100%;
+}
+
+.entry-right {
+  float: left;
+  width: 20%;
+  height: 100%;
+}
+
+.entry-left-user {
+  float: left;
+  width: 33%;
+  height: 100%;
+}
+
+.entry-mid-user {
+  float: left;
+  width: 66%;
+  height: 100%;
+}
+
+.image-listing {
+  margin-top: 10px;
+  width: 150px ;
+  max-height: 100%;
+}
+
+.image-avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.image-hero {
+  height: auto;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  /*border: thin red solid;*/
+}
+
+.entry-edit-left {
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+.entry-edit-right {
+  float: left;
+  width: 30%;
+  height: 100%;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.entry-neighborhood {
+  float: left;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.entry-type {
+  float: left;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.entry-period {
+  float: left;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.user_nav {
+  color: white;
+}
+
+.panel-icons {
+  text-align:center ;
+}
+
+.user-footer {
+  text-align:right;
+}
+
+

@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  root 'apartments#index'
+
+  # Routes for the Apartment resource:
+  # CREATE
+  get('/apartments/new', { :controller => 'apartments', :action => 'new' })
+  get('/create_apartment', { :controller => 'apartments', :action => 'create' })
+
+  # READ
+  get('/apartments', { :controller => 'apartments', :action => 'index' })
+  get('/apartments/:id', { :controller => 'apartments', :action => 'show' })
+
+  # UPDATE
+  get('/apartments/:id/edit', { :controller => 'apartments', :action => 'edit' })
+  get('/update_apartment/:id', { :controller => 'apartments', :action => 'update' })
+
+  # DELETE
+  get('/delete_apartment/:id', { :controller => 'apartments', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the User resource:
+  get('/users/:id/new', { :controller => 'users', :action => 'new' })
+  get('/create_user/:id', { :controller => 'users', :action => 'create' })
+
+  # READ
+  get('/users', { :controller => 'users', :action => 'index' })
+  get('/users/:id', { :controller => 'users', :action => 'show' })
+
+  # UPDATE
+  get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
+  get('/update_user/:id', { :controller => 'users', :action => 'update' })
+
+  # DELETE
+  get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
+  #------------------------------
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

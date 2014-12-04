@@ -1,0 +1,583 @@
+<% if @apartment.errors.any? %>
+  <% @apartment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h1>Add Apartment</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_apartment" class="form-horizontal">
+      <!-- Label and input for apttype -->
+      <div class="form-group">
+        <label for="apttype" class="col-sm-2 control-label">
+          Apttype
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="apttype" name="apttype" placeholder="Apttype" class="form-control" value="<%= @apartment.apttype %>">
+        </div>
+      </div>
+
+      <!-- Label and input for size -->
+      <div class="form-group">
+        <label for="size" class="col-sm-2 control-label">
+          Size
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="size" name="size" placeholder="Size" class="form-control" value="<%= @apartment.size %>">
+        </div>
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="col-sm-2 control-label">
+          Price
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @apartment.price %>">
+        </div>
+      </div>
+
+      <!-- Label and input for startdate -->
+      <div class="form-group">
+        <label for="startdate" class="col-sm-2 control-label">
+          Startdate
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="startdate" name="startdate" placeholder="Startdate" class="form-control" value="<%= @apartment.startdate %>">
+        </div>
+      </div>
+
+      <!-- Label and input for enddate -->
+      <div class="form-group">
+        <label for="enddate" class="col-sm-2 control-label">
+          Enddate
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="enddate" name="enddate" placeholder="Enddate" class="form-control" value="<%= @apartment.enddate %>">
+        </div>
+      </div>
+
+      <!-- Label and input for neighborhood -->
+      <div class="form-group">
+        <label for="neighborhood" class="col-sm-2 control-label">
+          Neighborhood
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="neighborhood" name="neighborhood" placeholder="Neighborhood" class="form-control" value="<%= @apartment.neighborhood %>">
+        </div>
+      </div>
+
+      <!-- Label and input for streetadd -->
+      <div class="form-group">
+        <label for="streetadd" class="col-sm-2 control-label">
+          Streetadd
+        </label>
+        <div class="col-sm-10">
+          <textarea id="streetadd" name="streetadd" placeholder="Streetadd" class="form-control" rows="3"><%= @apartment.streetadd %></textarea>
+        </div>
+      </div>
+
+      <!-- Label and input for unit -->
+      <div class="form-group">
+        <label for="unit" class="col-sm-2 control-label">
+          Unit
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="unit" name="unit" placeholder="Unit" class="form-control" value="<%= @apartment.unit %>">
+        </div>
+      </div>
+
+      <!-- Label and input for city -->
+      <div class="form-group">
+        <label for="city" class="col-sm-2 control-label">
+          City
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @apartment.city %>">
+        </div>
+      </div>
+
+      <!-- Label and input for state -->
+      <div class="form-group">
+        <label for="state" class="col-sm-2 control-label">
+          State
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @apartment.state %>">
+        </div>
+      </div>
+
+      <!-- Label and input for zip -->
+      <div class="form-group">
+        <label for="zip" class="col-sm-2 control-label">
+          Zip
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @apartment.zip %>">
+        </div>
+      </div>
+
+      <!-- Label and input for furnished -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="furnished">
+              <input type="checkbox" id="furnished" name="furnished" value="1" <%= "checked" if @apartment.furnished %>>
+              Furnished
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for ac -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="ac">
+              <input type="checkbox" id="ac" name="ac" value="1" <%= "checked" if @apartment.ac %>>
+              Ac
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for gym -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="gym">
+              <input type="checkbox" id="gym" name="gym" value="1" <%= "checked" if @apartment.gym %>>
+              Gym
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for pool -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="pool">
+              <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" if @apartment.pool %>>
+              Pool
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for doorman -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="doorman">
+              <input type="checkbox" id="doorman" name="doorman" value="1" <%= "checked" if @apartment.doorman %>>
+              Doorman
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for elevator -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="elevator">
+              <input type="checkbox" id="elevator" name="elevator" value="1" <%= "checked" if @apartment.elevator %>>
+              Elevator
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for internet -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="internet">
+              <input type="checkbox" id="internet" name="internet" value="1" <%= "checked" if @apartment.internet %>>
+              Internet
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for cable -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="cable">
+              <input type="checkbox" id="cable" name="cable" value="1" <%= "checked" if @apartment.cable %>>
+              Cable
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for laundryu -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="laundryu">
+              <input type="checkbox" id="laundryu" name="laundryu" value="1" <%= "checked" if @apartment.laundryu %>>
+              Laundryu
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for laundryb -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="laundryb">
+              <input type="checkbox" id="laundryb" name="laundryb" value="1" <%= "checked" if @apartment.laundryb %>>
+              Laundryb
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for headline -->
+      <div class="form-group">
+        <label for="headline" class="col-sm-2 control-label">
+          Headline
+        </label>
+        <div class="col-sm-10">
+          <textarea id="headline" name="headline" placeholder="Headline" class="form-control" rows="3"><%= @apartment.headline %></textarea>
+        </div>
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">
+          Description
+        </label>
+        <div class="col-sm-10">
+          <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @apartment.description %></textarea>
+        </div>
+      </div>
+
+      <!-- Label and input for pictureurl -->
+      <div class="form-group">
+        <label for="pictureurl" class="col-sm-2 control-label">
+          Pictureurl
+        </label>
+        <div class="col-sm-10">
+          <textarea id="pictureurl" name="pictureurl" placeholder="Pictureurl" class="form-control" rows="3"><%= @apartment.pictureurl %></textarea>
+        </div>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="col-sm-2 control-label">
+          User
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @apartment.user_id %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Create Apartment" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Apartment</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/create_apartment" class="form-horizontal">
+          <!-- Label and input for apttype -->
+          <div class="form-group">
+            <label for="apttype" class="col-sm-2 control-label">
+              Apttype
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="apttype" name="apttype" placeholder="Apttype" class="form-control" value="<%= @apartment.apttype %>">
+            </div>
+          </div>
+
+          <!-- Label and input for size -->
+          <div class="form-group">
+            <label for="size" class="col-sm-2 control-label">
+              Size
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="size" name="size" placeholder="Size" class="form-control" value="<%= @apartment.size %>">
+            </div>
+          </div>
+
+          <!-- Label and input for price -->
+          <div class="form-group">
+            <label for="price" class="col-sm-2 control-label">
+              Price
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @apartment.price %>">
+            </div>
+          </div>
+
+          <!-- Label and input for startdate -->
+          <div class="form-group">
+            <label for="startdate" class="col-sm-2 control-label">
+              Startdate
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="startdate" name="startdate" placeholder="Startdate" class="form-control" value="<%= @apartment.startdate %>">
+            </div>
+          </div>
+
+          <!-- Label and input for enddate -->
+          <div class="form-group">
+            <label for="enddate" class="col-sm-2 control-label">
+              Enddate
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="enddate" name="enddate" placeholder="Enddate" class="form-control" value="<%= @apartment.enddate %>">
+            </div>
+          </div>
+
+          <!-- Label and input for neighborhood -->
+          <div class="form-group">
+            <label for="neighborhood" class="col-sm-2 control-label">
+              Neighborhood
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="neighborhood" name="neighborhood" placeholder="Neighborhood" class="form-control" value="<%= @apartment.neighborhood %>">
+            </div>
+          </div>
+
+          <!-- Label and input for streetadd -->
+          <div class="form-group">
+            <label for="streetadd" class="col-sm-2 control-label">
+              Streetadd
+            </label>
+            <div class="col-sm-10">
+              <textarea id="streetadd" name="streetadd" placeholder="Streetadd" class="form-control" rows="3"><%= @apartment.streetadd %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for unit -->
+          <div class="form-group">
+            <label for="unit" class="col-sm-2 control-label">
+              Unit
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="unit" name="unit" placeholder="Unit" class="form-control" value="<%= @apartment.unit %>">
+            </div>
+          </div>
+
+          <!-- Label and input for city -->
+          <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">
+              City
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @apartment.city %>">
+            </div>
+          </div>
+
+          <!-- Label and input for state -->
+          <div class="form-group">
+            <label for="state" class="col-sm-2 control-label">
+              State
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @apartment.state %>">
+            </div>
+          </div>
+
+          <!-- Label and input for zip -->
+          <div class="form-group">
+            <label for="zip" class="col-sm-2 control-label">
+              Zip
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @apartment.zip %>">
+            </div>
+          </div>
+
+          <!-- Label and input for furnished -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="furnished">
+                  <input type="checkbox" id="furnished" name="furnished" value="1" <%= "checked" if @apartment.furnished %>>
+                  Furnished
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for ac -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="ac">
+                  <input type="checkbox" id="ac" name="ac" value="1" <%= "checked" if @apartment.ac %>>
+                  Ac
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for gym -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="gym">
+                  <input type="checkbox" id="gym" name="gym" value="1" <%= "checked" if @apartment.gym %>>
+                  Gym
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for pool -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="pool">
+                  <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" if @apartment.pool %>>
+                  Pool
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for doorman -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="doorman">
+                  <input type="checkbox" id="doorman" name="doorman" value="1" <%= "checked" if @apartment.doorman %>>
+                  Doorman
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for elevator -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="elevator">
+                  <input type="checkbox" id="elevator" name="elevator" value="1" <%= "checked" if @apartment.elevator %>>
+                  Elevator
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for internet -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="internet">
+                  <input type="checkbox" id="internet" name="internet" value="1" <%= "checked" if @apartment.internet %>>
+                  Internet
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for cable -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="cable">
+                  <input type="checkbox" id="cable" name="cable" value="1" <%= "checked" if @apartment.cable %>>
+                  Cable
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for laundryu -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="laundryu">
+                  <input type="checkbox" id="laundryu" name="laundryu" value="1" <%= "checked" if @apartment.laundryu %>>
+                  Laundryu
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for laundryb -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="laundryb">
+                  <input type="checkbox" id="laundryb" name="laundryb" value="1" <%= "checked" if @apartment.laundryb %>>
+                  Laundryb
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for headline -->
+          <div class="form-group">
+            <label for="headline" class="col-sm-2 control-label">
+              Headline
+            </label>
+            <div class="col-sm-10">
+              <textarea id="headline" name="headline" placeholder="Headline" class="form-control" rows="3"><%= @apartment.headline %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for description -->
+          <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">
+              Description
+            </label>
+            <div class="col-sm-10">
+              <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @apartment.description %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for pictureurl -->
+          <div class="form-group">
+            <label for="pictureurl" class="col-sm-2 control-label">
+              Pictureurl
+            </label>
+            <div class="col-sm-10">
+              <textarea id="pictureurl" name="pictureurl" placeholder="Pictureurl" class="form-control" rows="3"><%= @apartment.pictureurl %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for user_id -->
+          <div class="form-group">
+            <label for="user_id" class="col-sm-2 control-label">
+              User
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @apartment.user_id %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Create Apartment" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
