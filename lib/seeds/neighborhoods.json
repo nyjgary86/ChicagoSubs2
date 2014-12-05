@@ -1,0 +1,310 @@
+[
+  {
+    "neighborhood":"Rogers Park ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"West Ridge ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Uptown ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Lincoln Square ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Edison Park ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Norwood Park ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Jefferson Park ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Forest Glen ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"North Park ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Albany Park ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"O�Hare ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"Edgewater ",
+    "district":"Far North Side"
+  },
+  {
+    "neighborhood":"North Center ",
+    "district":"North Side"
+  },
+  {
+    "neighborhood":"Lakeview ",
+    "district":"North Side"
+  },
+  {
+    "neighborhood":"Lincoln Park ",
+    "district":"North Side"
+  },
+  {
+    "neighborhood":"Avondale ",
+    "district":"North Side"
+  },
+  {
+    "neighborhood":"Logan Square ",
+    "district":"North Side"
+  },
+  {
+    "neighborhood":"Portage Park ",
+    "district":"Northwest Side"
+  },
+  {
+    "neighborhood":"Irving Park ",
+    "district":"Northwest Side"
+  },
+  {
+    "neighborhood":"Dunning ",
+    "district":"Northwest Side"
+  },
+  {
+    "neighborhood":"Montclare ",
+    "district":"Northwest Side"
+  },
+  {
+    "neighborhood":"Belmont Cragin ",
+    "district":"Northwest Side"
+  },
+  {
+    "neighborhood":"Hermosa ",
+    "district":"Northwest Side"
+  },
+  {
+    "neighborhood":"Near North Side ",
+    "district":"Central"
+  },
+  {
+    "neighborhood":"Loop ",
+    "district":"Central"
+  },
+  {
+    "neighborhood":"Near South Side ",
+    "district":"Central"
+  },
+  {
+    "neighborhood":"Humboldt Park ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"West Town ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"Austin ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"West Garfield Park ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"East Garfield Park ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"Near West Side ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"North Lawndale ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"South Lawndale ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"Lower West Side ",
+    "district":"West and Near West Side"
+  },
+  {
+    "neighborhood":"Garfield Ridge ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Archer Heights ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Brighton Park ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"McKinley Park ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"New City ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"West Elsdon ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Gage Park ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Clearing ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"West Lawn ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Chicago Lawn ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"West Englewood ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Englewood ",
+    "district":"Southwest Side"
+  },
+  {
+    "neighborhood":"Armour Square ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Douglas ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Oakland ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Fuller Park ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Grand Boulevard ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Kenwood ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Washington Park ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Hyde Park ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Woodlawn ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"South Shore ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Bridgeport ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Greater Grand Crossing ",
+    "district":"South Side"
+  },
+  {
+    "neighborhood":"Ashburn ",
+    "district":"Far Southwest Side"
+  },
+  {
+    "neighborhood":"Auburn Gresham ",
+    "district":"Far Southwest Side"
+  },
+  {
+    "neighborhood":"Beverly ",
+    "district":"Far Southwest Side"
+  },
+  {
+    "neighborhood":"Washington Heights ",
+    "district":"Far Southwest Side"
+  },
+  {
+    "neighborhood":"Mount Greenwood ",
+    "district":"Far Southwest Side"
+  },
+  {
+    "neighborhood":"Morgan Park ",
+    "district":"Far Southwest Side"
+  },
+  {
+    "neighborhood":"Chatham ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Avalon Park ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"South Chicago ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Burnside ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Calumet Heights ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Roseland ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Pullman ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"South Deering ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"East Side ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"West Pullman ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Riverdale ",
+    "district":"Far South Side"
+  },
+  {
+    "neighborhood":"Hegewisch ",
+    "district":"Far South Side"
+  }
+]

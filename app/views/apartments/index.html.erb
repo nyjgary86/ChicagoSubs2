@@ -69,11 +69,14 @@
 
           <%= search_form_for @search do |f| %>
             <div class="form-group">
+
+              <%= f.label :neighborhood_eq, "Neighborhood:" %>
+              <%= f.select :neighborhood_eq, options_from_collection_for_select(Neighborhood.all, "id", "neighborhood"), :class => "form-control" %>
+              <br>
+
               <%= f.label :neighborhood_cont, "Neighborhood" %>
               <%= f.text_field :neighborhood_cont, :class => "form-control" %>
 
-              <%= f.label :neighborhood_eq, "Neighborhood" %>
-              <%= f.select :neighborhood_eq, ["1", "2", "3"], :class => "form-control" %>
 
             </div>
             <div class="actions"><%= f.submit "Filter" %></div>
@@ -100,6 +103,5 @@
     </div>
   </div>
 </body>
-
 
 

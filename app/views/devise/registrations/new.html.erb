@@ -13,39 +13,39 @@
       <%= f.email_field :email, autofocus: true, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :password %>
       <% if @validatable %>
       <% end %>
       <%= f.password_field :password, autocomplete: "off" , :class => "form-control", :placeholder => "8 characters minimum" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :first_name %>
       <%= f.text_field :first_name, autofocus: true, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :last_name %>
       <%= f.text_field :last_name, autofocus: true, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :university %>
-      <%= f.text_field :university, autofocus: true, :class => "form-control" %>
+      <%= f.select :university, options_from_collection_for_select(University.all, "id", "university"), { :include_blank=>true }, { :class => "form-control" } %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :introduction %>
       <%= f.text_field :introduction, autofocus: true, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :profile_pic %>
       <%= f.text_field :profile_pic, autofocus: true, :class => "form-control" %>
     </div>

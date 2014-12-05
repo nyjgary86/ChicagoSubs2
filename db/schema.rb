@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204003501) do
+ActiveRecord::Schema.define(version: 20141204234230) do
 
   create_table "apartments", force: true do |t|
     t.string   "apttype"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 20141204003501) do
     t.text     "description"
     t.text     "pictureurl"
     t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "neighborhoods", force: true do |t|
+    t.string   "neighborhood"
+    t.string   "district"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "universities", force: true do |t|
+    t.text     "university"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
