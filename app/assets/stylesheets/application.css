@@ -240,6 +240,12 @@ ul {
   height: 100%;
 }
 
+.entry-indicator {
+  margin: 10px;
+  text-align: center;
+  height: 25%;
+}
+
 .entry-left-user {
   float: left;
   width: 33%;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204234230) do
+ActiveRecord::Schema.define(version: 20141205075008) do
 
   create_table "apartments", force: true do |t|
     t.string   "apttype"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20141204234230) do
     t.text     "description"
     t.text     "pictureurl"
     t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favorites", force: true do |t|
+    t.integer  "apartment_id"
+    t.integer  "favorited_by_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
