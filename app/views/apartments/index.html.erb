@@ -28,21 +28,21 @@
               <li>
                 <div class="entry-neighborhood">
                   <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-                  <%= apartment.neighborhood%>
+                  <%= apartment.streetadd %> (<%= apartment.neighborhood%>)
                   </div>
                 <div class="clearfix"></div>
               </li>
               <li>
                 <div class="entry-type">
                   <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                  <%= apartment.apttype %> (<%= apartment.size %>)
+                  <%= apartment.apttype %>: <%= apartment.size %>
                 </div>
                 <div class="clearfix"></div>
               </li>
               <li>
                 <div class="entry-period">
                   <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                  <%= apartment.startdate %> - <%= apartment.enddate %>
+                  <%= apartment.startdate.strftime('%v') %>  to  <%= apartment.enddate.strftime('%v') %>
                 </div>
                 <div class="clearfix"></div>
               </li>
@@ -65,7 +65,6 @@
         <h1>Filter Listings</h1>
       </div>
       <div class="filter-container">
-<!--         <div class="subcolumn3"> -->
 
           <%= search_form_for @search do |f| %>
             <div class="form-group">
