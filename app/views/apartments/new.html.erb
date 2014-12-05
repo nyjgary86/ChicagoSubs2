@@ -80,52 +80,11 @@
 
           <!-- Label and input for neighborhood -->
           <div class="form-group">
-            <label for="neighborhood" class="col-sm-2 control-label">
+            <label for="neighborhood_id" class="col-sm-2 control-label">
               Neighborhood
             </label>
             <div class="col-sm-10">
-              <select class="form-control" id="neighborhood" name="neighborhood">
-                <option>Albany Park</option>
-                <option>Andersonville</option>
-                <option>Avondale</option>
-                <option>Beverly</option>
-                <option>Boystown</option>
-                <option>Bridgeport</option>
-                <option>Bronzeville</option>
-                <option>Chinatown</option>
-                <option>Edgewater</option>
-                <option>Gold Coast</option>
-                <option>Humboldt Park</option>
-                <option>Hyde Park</option>
-                <option>Irving Park</option>
-                <option>Jefferson Park</option>
-                <option>Kenwood</option>
-                <option>Lakeview</option>
-                <option>Lincoln Park</option>
-                <option>Lincoln Square</option>
-                <option>Little Italy / University Village</option>
-                <option>Little Village</option>
-                <option>Logan Square</option>
-                <option>Loop</option>
-                <option>Magnificent Mile</option>
-                <option>North Center</option>
-                <option>North Park</option>
-                <option>Old Town</option>
-                <option>Pilsen</option>
-                <option>Portage Park</option>
-                <option>Pullman</option>
-                <option>River North</option>
-                <option>Rogers Park</option>
-                <option>Roscoe Village</option>
-                <option>South Loop</option>
-                <option>South Shore</option>
-                <option>Streeterville</option>
-                <option>Uptown</option>
-                <option>West Loop</option>
-                <option>West Ridge</option>
-                <option>West Town</option>
-                <option>Wicker Park / Bucktown</option>
-              </select>
+            <%= select_tag("neighborhood_id", options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name"),{ :class => 'form-control'}) %>
             </div>
           </div>
         </div>

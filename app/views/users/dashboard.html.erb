@@ -6,35 +6,30 @@
   <div class="column4-padding">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">My Profile</h3>
+        <h3 class="panel-title">My Profile <%= current_user.id %></h3>
       </div>
       <div class="panel-body">
         <div class="details-contact-container">
           <img class = "image-avatar" src=<%=current_user.profile_pic%>>
           <h1><%=current_user.first_name%> <%=current_user.last_name%></h1>
-          <h4><%=current_user.university%></h4>
+          <h4><%=current_user.university.name%></h4>
           <br>
           <p><%=current_user.introduction%></p>
-        </div>
-        <div class="panel-icons">
             <a href="#" class="btn btn-warning">
               Edit Account
               <i class="fa fa-edit"></i>
             </a>
-          </td>
-          <td>
             <a href="#" class="btn btn-danger">
               Delete Account
               <i class="fa fa-trash-o"></i>
             </a>
-          </td>
         </div>
-
       </div>
     </div>
   </div>
 
   <div class="column6">
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">My Apartments</h3>
@@ -55,45 +50,54 @@
 
       <div class = "entry-mid-user">
         <h2><%= apartment.headline%></h2>
-          <div class = "entry-edit-left">
-          <ul>
-            <li>
-              <div class="entry-neighborhood">
-                <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-                <%= apartment.neighborhood%>
-                </div>
-              <div class="clearfix"></div>
-            </li>
-            <li>
-              <div class="entry-type">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                <%= apartment.apttype %> (<%= apartment.size %>)
-              </div>
-              <div class="clearfix"></div>
-            </li>
-            <li>
-              <div class="entry-period">
-                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                <%= apartment.startdate %> - <%= apartment.enddate %>
-              </div>
-              <div class="clearfix"></div>
-            </li>
-          </div>
+
+        <div class = "entry-edit-left">
+        <ul>
+
+          <li>
+            <div class="entry-neighborhood">
+              <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+              <%= apartment.neighborhood.name%>
+            </div>
+            <div class="clearfix"></div>
+          </li>
+
+          <li>
+            <div class="entry-type">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              <%= apartment.apttype %> (<%= apartment.size %>)
+            </div>
+            <div class="clearfix"></div>
+          </li>
+
+          <li>
+            <div class="entry-period">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+              <%= apartment.startdate %> - <%= apartment.enddate %>
+            </div>
+            <div class="clearfix"></div>
+          </li>
+
         </ul>
-        <div class = "entry-edit-right">
-          <div class = "entry-edit-bottom">
-            <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
-            <a href="/apartments/<%= apartment.id %>/edit" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-            <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-          </div>
+        </div>
+
+      <div class = "entry-edit-right">
+        <div class = "entry-edit-bottom">
+          <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
+          <a href="/apartments/<%= apartment.id %>/edit" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+          <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
         </div>
       </div>
+
     </div>
-    <% end %>
   </div>
 
-<!--   <div class = "user-footer">
-    <a href="/apartments/new" class="btn btn-success">List New Apartment</a>
-  </div> -->
+    <% end %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">My Favorites</h3>
+      </div>
+    </div>
 
+  </div>
 </div>

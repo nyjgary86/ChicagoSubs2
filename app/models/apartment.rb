@@ -1,11 +1,13 @@
 class Apartment < ActiveRecord::Base
   belongs_to :user
+  belongs_to :neighborhood
+
   validates :apttype, :presence => true
   validates :size, :presence => true
   validates :price, :presence => true
   validates :startdate, :presence => true
   validates :enddate, :presence => true
-  validates :neighborhood, :presence => true
+  validates :neighborhood_id , :presence => true
   validates :streetadd, :presence => true
   validates :unit, :presence => true
   validates :city, :presence => true

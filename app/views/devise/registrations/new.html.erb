@@ -36,8 +36,8 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :university %>
-      <%= f.select :university, options_from_collection_for_select(University.all, "id", "university"), { :include_blank=>true }, { :class => "form-control" } %>
+      <%= f.label :university_id %>
+      <%= f.select :university_id, options_from_collection_for_select(University.all, "id", "name"), { :include_blank=>true }, { :class => "form-control" } %>
     </div>
 
     <div class="form-group">

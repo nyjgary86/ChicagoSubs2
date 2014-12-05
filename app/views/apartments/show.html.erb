@@ -49,7 +49,7 @@
             <li>
               <div class="entry-neighborhood">
                 <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-                <%= @apartment.neighborhood %>
+                <%= @apartment.neighborhood_id %>
                 </div>
               <div class="clearfix"></div>
             </li>
@@ -163,7 +163,7 @@
         <br>
         <img class = "image-avatar" src=<%=@apartment.user.profile_pic%>>
         <h1><%=@apartment.user.first_name%></h1>
-        <h4><%=@apartment.user.university%></h4>
+        <h4><%=@apartment.user.university_id%></h4>
         <br>
         <p>Current MBA student at University of Chicago. Born and raised in Singapore but have been living in the U.S. for the past eight years. Also completed exchanges in Beijing and London during my undergrad years. Love traveling and enjoy making new friends from different cultures!</p>
         <br>

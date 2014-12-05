@@ -28,7 +28,7 @@
               <li>
                 <div class="entry-neighborhood">
                   <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-                  <%= apartment.streetadd %> (<%= apartment.neighborhood%>)
+                  <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
                   </div>
                 <div class="clearfix"></div>
               </li>
@@ -49,19 +49,23 @@
             </ul>
           </div>
 
+
           <div class = "entry-right">
             <div class = "entry-indicator">
-              <% if apartment.user_id.to_i == current_user.id %>
-                <a href="/apartments/<%=apartment.id%>/edit" class="btn btn-success btn-xs btn-block">Edit Your Listing</a>
-                </form>
-              <% elsif 1>2 %>
-                Your Favorite!
+              <% if current_user %>
+                <% if apartment.user_id.to_i == current_user.id %>
+                  <a href="/apartments/<%=apartment.id%>/edit" class="btn btn-success btn-xs btn-block">Edit Your Listing</a>
+                  </form>
+                <% elsif current_user.favorites.pluck(:apartment_id).include? apartment.id %>
+                  Your Favorite!
+                <% else %>
+                  <form action="/create_favorite">
+                    <input type="hidden" name="apartment_id" id="apartment_id" value=<%= apartment.id %>>
+                    <input type="hidden" name="favorited_by_id" id="favorited_by_id" value=<%= current_user.id %>>
+                    <input type="submit" value="Add to Favorites" class="btn btn-default btn-xs btn-block">
+                  </form>
+                <% end %>
               <% else %>
-                <form action="/create_favorite">
-                  <input type="hidden" name="apartment_id" id="apartment_id" value=<%= apartment.id %>>
-                  <input type="hidden" name="favorited_by_id" id="favorited_by_id" value=<%= current_user.id %>>
-                  <input type="submit" value="Add to Favorites" class="btn btn-default btn-xs btn-block">
-                </form>
               <% end %>
             </div>
             <h3>$<%= apartment.price %></h3>
@@ -96,8 +100,8 @@
               <%= f.label :size, "Size:" %>
               <%= f.select :size, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
 
-              <%= f.label :neighborhood_eq, "Neighborhood:" %>
-              <%= f.select :neighborhood_eq, options_from_collection_for_select(Neighborhood.all, "id", "neighborhood"), { :include_blank=>true }, { :class => "form-control" } %>
+              <%= f.label :neighborhood_id_eq, "Neighborhood:" %>
+              <%= f.select :neighborhood_id_eq, options_from_collection_for_select(Neighborhood.all, "id", "name"), { :include_blank=>true }, { :class => "form-control" } %>
             </div>
 
             <div class="form-group">

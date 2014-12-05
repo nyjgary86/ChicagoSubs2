@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     current_user.first_name = params[:first_name]
     current_user.last_name = params[:last_name]
-    current_user.university = params[:university]
+    current_user.university_id = params[:university_id]
     current_user.introduction = params[:introduction]
     current_user.profile_pic = params[:profile_pic]
 
@@ -53,9 +53,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
-    @user.email_edu = params[:email_edu]
-    @user.university = params[:university]
+    @user.email = params[:email]
+    @user.university_id = params[:university_id]
     @user.introduction = params[:introduction]
 
     if @user.save

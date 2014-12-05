@@ -11,14 +11,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :email
     devise_parameter_sanitizer.for(:sign_up) << :first_name
     devise_parameter_sanitizer.for(:sign_up) << :last_name
-    devise_parameter_sanitizer.for(:sign_up) << :university
+    devise_parameter_sanitizer.for(:sign_up) << :university_id
     devise_parameter_sanitizer.for(:sign_up) << :introduction
     devise_parameter_sanitizer.for(:sign_up) << :profile_pic
 
     devise_parameter_sanitizer.for(:account_update) << :email
     devise_parameter_sanitizer.for(:account_update) << :first_name
     devise_parameter_sanitizer.for(:account_update) << :last_name
-    devise_parameter_sanitizer.for(:account_update) << :university
+    devise_parameter_sanitizer.for(:account_update) << :university_id
     devise_parameter_sanitizer.for(:account_update) << :introduction
     devise_parameter_sanitizer.for(:account_update) << :profile_pic
   end

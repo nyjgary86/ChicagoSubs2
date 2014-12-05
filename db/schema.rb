@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205075008) do
+ActiveRecord::Schema.define(version: 20141205190504) do
 
   create_table "apartments", force: true do |t|
     t.string   "apttype"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141205075008) do
     t.integer  "price"
     t.date     "startdate"
     t.date     "enddate"
-    t.string   "neighborhood"
+    t.integer  "neighborhood_id", limit: 255
     t.text     "streetadd"
     t.string   "unit"
     t.string   "city"
@@ -51,32 +51,32 @@ ActiveRecord::Schema.define(version: 20141205075008) do
   end
 
   create_table "neighborhoods", force: true do |t|
-    t.string   "neighborhood"
+    t.string   "name"
     t.string   "district"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "universities", force: true do |t|
-    t.text     "university"
+    t.text     "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",                 default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "university"
+    t.integer  "university_id",          limit: 255
     t.text     "profile_pic"
     t.text     "introduction"
     t.datetime "created_at"
