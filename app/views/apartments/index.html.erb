@@ -70,35 +70,22 @@
           <%= search_form_for @search do |f| %>
             <div class="form-group">
 
-              <%= f.label :neighborhood_eq, "Neighborhood:" %>
-              <%= f.select :neighborhood_eq, options_from_collection_for_select(Neighborhood.all, "id", "neighborhood"), :class => "form-control" %>
+              <%= f.label :apttype, "Apartment Type" %>
+              <%= f.select :apttype, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
               <br>
 
-              <%= f.label :neighborhood_cont, "Neighborhood" %>
-              <%= f.text_field :neighborhood_cont, :class => "form-control" %>
+              <%= f.label :size, "Size" %>
+              <%= f.select :size, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
+              <br>
 
+              <%= f.label :neighborhood_eq, "Neighborhood:" %>
+              <%= f.select :neighborhood_eq, options_from_collection_for_select(Neighborhood.all, "id", "neighborhood"), { :include_blank=>true }, { :class => "form-control" } %>
+              <br>
 
             </div>
             <div class="actions"><%= f.submit "Filter" %></div>
           <% end %>
 
-          <br>
-          <ul>
-            <li>Dates:</li>
-            <br>
-            <li>Price:</li>
-            <br>
-            <li>Neighborhood:</li>
-            <li>Room Type:</li>
-            <br><br>
-            <li>Features:</li>
-          </ul>
-        </div>
-
-        <div class="subcolumn7">
-          <input type="text" id="datepicker">
-
-        </div>
       </div>
     </div>
   </div>
