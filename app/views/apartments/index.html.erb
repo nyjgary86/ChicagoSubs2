@@ -12,6 +12,7 @@
       <% @apartments.each do |apartment| %>
 
         <div class="entry-container">
+          <a href="/apartments/<%=apartment.id%>"></a>
 
           <div class = "entry-left">
               <ul>
@@ -57,7 +58,7 @@
                   <a href="/apartments/<%=apartment.id%>/edit" class="btn btn-success btn-xs btn-block">Edit Your Listing</a>
                   </form>
                 <% elsif current_user.favorites.pluck(:apartment_id).include? apartment.id %>
-                  Your Favorite!
+                  <a href="/apartments/<%=apartment.id%>" class="btn btn-danger btn-xs btn-block">Your Favorite</a>
                 <% else %>
                   <form action="/create_favorite">
                     <input type="hidden" name="apartment_id" id="apartment_id" value=<%= apartment.id %>>
@@ -94,14 +95,14 @@
               <%= f.label :price_lteq, "Your Monthly Budget:" %>
               <%= f.search_field :price_lteq, :class => "form-control" %>
 
-              <%= f.label :apttype, "Apartment Type:" %>
-              <%= f.select :apttype, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
+              <%= f.label :apttype_eq, "Apartment Type:" %>
+              <%= f.select :apttype_eq, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
 
-              <%= f.label :size, "Size:" %>
-              <%= f.select :size, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
+              <%= f.label :size_eq, "Size:" %>
+              <%= f.select :size_eq, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
 
               <%= f.label :neighborhood_id_eq, "Neighborhood:" %>
-              <%= f.select :neighborhood_id_eq, options_from_collection_for_select(Neighborhood.all, "id", "name"), { :include_blank=>true }, { :class => "form-control" } %>
+              <%= f.select :neighborhood_id_eq, options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name"), { :include_blank=>true }, { :class => "form-control" } %>
             </div>
 
             <div class="form-group">
