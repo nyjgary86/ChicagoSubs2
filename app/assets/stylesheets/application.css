@@ -82,6 +82,14 @@ ul {
   margin-right: auto;
 }
 
+.column6 {
+  float: left;
+  width: 60%;
+  height: 100%;
+/*  border: 1px red dotted;*/
+}
+
+
 .column7 {
   float: left;
   width: 70%;
@@ -100,7 +108,13 @@ ul {
   float: left;
   width: 40%;
   height: 100%;
-/*  border: 1px red dotted;*/
+}
+
+.column4-padding {
+  float: left;
+  width: 40%;
+  height: 100%;
+  padding-right: 20px;
 }
 
 .subcolumn3 {
@@ -196,6 +210,7 @@ ul {
   float: left;
 /*  border: 1px #BDBDBD dotted;*/
   text-align: center;
+  padding: 20px;
 }
 
 .entry-container {
@@ -244,7 +259,7 @@ ul {
 }
 
 .image-avatar {
-  border-radius: 50%;
+  border-radius: 15%;
   width: 150px;
   height: 150px;
   display: block;

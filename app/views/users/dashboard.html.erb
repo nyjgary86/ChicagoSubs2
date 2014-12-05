@@ -1,32 +1,21 @@
 <div class="page-header">
-  <h1>User Info</h1>
+  <h1>My Dashboard</h1>
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="column4-padding">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">My Account</h3>
+        <h3 class="panel-title">My Profile</h3>
       </div>
-
       <div class="panel-body">
-        <br>
-        <img class = "image-avatar" src=<%= current_user.profile_pic%>>
-        <br>
-        <dl class="dl-horizontal">
-          <dt>Name</dt>
-          <dd><%= current_user.first_name %></dd>
+        <div class="details-contact-container">
+          <img class = "image-avatar" src=<%=current_user.profile_pic%>>
+          <h1><%=current_user.first_name%> <%=current_user.last_name%></h1>
+          <h4><%=current_user.university%></h4>
           <br>
-          <dt>Email</dt>
-          <dd><%= current_user.email %></dd>
-          <br>
-          <dt>University</dt>
-          <dd><%= current_user.university %></dd>
-          <br>
-          <dt>Introduction</dt>
-          <dd><%= current_user.introduction %></dd>
-        </dl>
-
+          <p><%=current_user.introduction%></p>
+        </div>
         <div class="panel-icons">
             <a href="#" class="btn btn-warning">
               Edit Account
@@ -45,7 +34,7 @@
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="column6">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">My Apartments</h3>
