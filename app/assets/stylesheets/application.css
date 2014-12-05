@@ -89,16 +89,16 @@ ul {
   margin-right: auto;
 }
 
-.column6 {
+.column7 {
   float: left;
-  width: 60%;
+  width: 70%;
   height: 100%;
 /*  border: 1px red dotted;*/
 }
 
-.column4-padding {
+.column3-padding {
   float: left;
-  width: 40%;
+  width: 30%;
   padding-left: 30px;
   height: 100%;
 }

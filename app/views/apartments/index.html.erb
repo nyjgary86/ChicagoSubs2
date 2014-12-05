@@ -3,7 +3,7 @@
 <body>
   <div class="content-container">
 
-    <div class="column6">
+    <div class="column7">
 
       <div class="page-header">
         <h1>Apartments</h1>
@@ -60,7 +60,7 @@
       <p><a href="/apartments/new" class="btn btn-primary">Add a New Apartment</a></p>
     </div>
 
-    <div class="column4-padding">
+    <div class="column3-padding">
       <div class="page-header">
         <h1>Filter Listings</h1>
       </div>
@@ -70,20 +70,29 @@
           <%= search_form_for @search do |f| %>
             <div class="form-group">
 
-              <%= f.label :apttype, "Apartment Type" %>
-              <%= f.select :apttype, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
-              <br>
+              <%= f.label :startdate_gteq, "From:" %>
+              <%= f.search_field :startdate_lteq, :id => "startdate_f", :class => "form-control"  %>
 
-              <%= f.label :size, "Size" %>
+              <%= f.label :enddate_gteq, "To:" %>
+              <%= f.search_field :enddate_gteq, :id => "enddate_f", :class => "form-control"  %>
+
+              <%= f.label :price_lteq, "Your Monthly Budget:" %>
+              <%= f.search_field :price_lteq, :class => "form-control" %>
+
+              <%= f.label :apttype, "Apartment Type:" %>
+              <%= f.select :apttype, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
+
+              <%= f.label :size, "Size:" %>
               <%= f.select :size, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
-              <br>
 
               <%= f.label :neighborhood_eq, "Neighborhood:" %>
               <%= f.select :neighborhood_eq, options_from_collection_for_select(Neighborhood.all, "id", "neighborhood"), { :include_blank=>true }, { :class => "form-control" } %>
-              <br>
-
             </div>
-            <div class="actions"><%= f.submit "Filter" %></div>
+
+            <div class="form-group">
+              <%= f.submit "Filter", :class => "btn btn-primary" %>
+            </div>
+
           <% end %>
 
       </div>
