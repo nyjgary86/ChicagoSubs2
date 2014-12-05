@@ -47,6 +47,15 @@
         University
       </label>
       <div class="col-sm-10">
+        <%=select_tag("university", options_from_collection_for_select(University.all, "id", "university")) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="university" class="col-sm-2 control-label">
+        University
+      </label>
+      <div class="col-sm-10">
         <select class="form-control" id="university" name="university" value=<%= current_user.university %>>
           <option>Adler School of Professional Psychology</option>
           <option>American Academy of Art</option>
