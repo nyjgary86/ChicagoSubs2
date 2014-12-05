@@ -46,7 +46,7 @@ h3 {
   font-size: 24pt;
   font-weight: bold;
   text-align: center;
-  margin-top: 20pt;
+  margin-top: 5pt;
   margin-bottom: 5pt;
   padding: 0;
 /*      text-align: center;*/
@@ -339,4 +339,16 @@ ul {
   text-align:right;
 }
 
+.align-left {
+  float: left;
+  vertical-align: bottom;
+}
 
+.align-right {
+  float: right;
+  vertical-align: bottom;
+}
+
+.list-button {
+  vertical-align: center;
+}

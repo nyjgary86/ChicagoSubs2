@@ -16,14 +16,14 @@
           <div class = "entry-left">
               <ul>
                 <li>
-                  <img class="image-listing" src=<%= apartment.pictureurl %>>
+                  <a href="/apartments/<%=apartment.id%>"><img class="image-listing" src=<%= apartment.pictureurl %>></a>
                   <div class="clearfix"></div>
                 </li>
               </ul>
           </div>
 
           <div class = "entry-mid">
-            <h2><%= apartment.headline%></h2></a>
+            <h2><%= apartment.headline%></h2>
             <ul>
               <li>
                 <div class="entry-neighborhood">
@@ -70,8 +70,6 @@
 
         </div>
       <% end %>
-
-      <p><a href="/apartments/new" class="btn btn-primary">Add a New Apartment</a></p>
     </div>
 
     <div class="column3-padding">
@@ -103,7 +101,7 @@
             </div>
 
             <div class="form-group">
-              <%= f.submit "Filter", :class => "btn btn-primary" %>
+              <%= f.submit "Filter"%>
             </div>
 
           <% end %>

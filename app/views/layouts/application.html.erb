@@ -66,6 +66,8 @@
               <li><%= link_to 'Delete account', registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></li>
             </ul>
           </li>
+        <li><div="list-button"><a href="/apartments/new" class="btn btn-primary btn-xs">List New Apartment</a></div></li>
+
 
         <% else %>
           <li><a href="/users/sign_up">Sign up</a></li>
