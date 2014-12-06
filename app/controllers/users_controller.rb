@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def sign_up
+  end
+
   def dashboard
   end
 

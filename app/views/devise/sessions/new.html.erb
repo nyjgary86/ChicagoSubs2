@@ -1,6 +1,18 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<style>
+  body {
+    background-image: url("http://wallpoper.com/images/00/27/67/97/chicago-bean_00276797.jpg");
+    background-color: #cccccc;
+    background-size: 100%;
+  }
+</style>
+
+<body>
+
+  <div class = "sign-in">
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -22,5 +34,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+
+</body>
 
 <%= render "devise/shared/links" %>

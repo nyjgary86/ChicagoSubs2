@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   #------------------------------
 
   devise_for :users
-  root 'apartments#index'
+  root :to => redirect('/users/sign_in')
 
   # Routes for the Apartment resource:
   # CREATE
