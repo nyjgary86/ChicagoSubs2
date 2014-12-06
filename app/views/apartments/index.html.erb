@@ -6,13 +6,14 @@
     <div class="column7">
 
       <div class="page-header">
-        <h1>Apartments</h1>
+        <h1>Apartments
+          <small>(Click on photo to see detailed listing)</small>
+        </h1>
       </div>
 
       <% @apartments.each do |apartment| %>
 
         <div class="entry-container">
-          <a href="/apartments/<%=apartment.id%>"></a>
 
           <div class = "entry-left">
               <ul>
@@ -49,7 +50,6 @@
               </li>
             </ul>
           </div>
-
 
           <div class = "entry-right">
             <div class = "entry-indicator">

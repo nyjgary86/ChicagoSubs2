@@ -300,8 +300,9 @@ ul {
   float: left;
   width: 30%;
   height: 100%;
-  vertical-align: bottom;
   text-align: right;
+  padding-top: 35px;
+  padding-right: 15px;
 }
 
 .entry-neighborhood {
@@ -349,7 +350,7 @@ ul {
 }
 
 .list-button {
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 .feature {

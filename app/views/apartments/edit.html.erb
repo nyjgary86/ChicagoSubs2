@@ -83,11 +83,11 @@
 
           <!-- Label and input for neighborhood -->
           <div class="form-group">
-            <label for="neighborhood" class="col-sm-2 control-label">
+            <label for="neighborhood_id" class="col-sm-2 control-label">
               Neighborhood
             </label>
             <div class="col-sm-10">
-              <%= select_tag("neighborhood", options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name"),{ :class => 'form-control'}) %>
+              <%= select_tag("neighborhood_id", options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name", @apartment.neighborhood_id),{ :class => 'form-control'}) %>
             </div>
           </div>
         </div>
