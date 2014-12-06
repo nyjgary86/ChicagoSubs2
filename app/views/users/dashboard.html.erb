@@ -11,6 +11,7 @@
 
     <div class="details-contact-container">
       <img class = "image-avatar" src=<%=current_user.profile_pic%>>
+
       <h1><%=current_user.first_name%> <%=current_user.last_name%></h1>
       <h4><%=current_user.university.name%></h4>
       <br>
@@ -117,6 +118,7 @@
             <li>
               <img class="image-listing" src=<%= apartment.pictureurl %>>
 
+              </a>
             </li>
           </ul>
       </div>
