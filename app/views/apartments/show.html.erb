@@ -1,5 +1,23 @@
+
+
 <div class="page-header">
-  <h1><%= @apartment.headline %></h1>
+  <h1><%= @apartment.headline %>
+    <% if current_user %>
+      <% if @apartment.user_id.to_i == current_user.id %>
+        <a href="/apartments/<%=@apartment.id%>/edit" class="btn btn-success">Edit Your Listing</a>
+        </form>
+      <% elsif current_user.favorites.pluck(:apartment_id).include? @apartment.id %>
+        <a href="/apartments/<%=@apartment.id%>" class="btn btn-danger">Your Favorite</a>
+      <% else %>
+        <form action="/create_favorite">
+          <input type="hidden" name="apartment_id" id="apartment_id" value=<%= @apartment.id %>>
+          <input type="hidden" name="favorited_by_id" id="favorited_by_id" value=<%= current_user.id %>>
+          <input type="submit" value="Add to Favorites" class="btn btn-default">
+        </form>
+      <% end %>
+    <% else %>
+    <% end %>
+  </h1>
 </div>
 
 <div class="content-container">
@@ -40,7 +58,7 @@
             <li>
               <div class="entry-period">
                 <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                <%= @apartment.startdate.strftime('%v') %> - <%= @apartment.enddate.strftime('%v') %>
+                <%= @apartment.startdate.strftime('%v') %> to <%= @apartment.enddate.strftime('%v') %>
               </div>
               <div class="clearfix"></div>
             </li>
@@ -152,25 +170,5 @@
 
 </div>
 
-<!-- Javascript for Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-<script>
-  function initialize() {
-    var myLatlng = new google.maps.LatLng(<%=@the_latitude%>, <%=@the_longitude%>);
-    var mapOptions = {
-      zoom: 15,
-      center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Hello World!'
-    });
-  }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-</script>
 

@@ -43,3 +43,5 @@ gem 'devise'
 gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.git", :branch => "boothappdev"
 
 gem 'ransack'
+
+gem 'jquery-turbolinks'
