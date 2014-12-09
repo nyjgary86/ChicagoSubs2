@@ -14,6 +14,8 @@
     }
   </style>
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj_NDdLbBs7npzMT1e2nVQ_jAM3tyAif4"></script>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -22,33 +24,10 @@
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj_NDdLbBs7npzMT1e2nVQ_jAM3tyAif4"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <!-- Javascript for Google Maps -->
-  <script>
-    function initialize() {
-      var myLatlng = new google.maps.LatLng(<%=@the_latitude%>, <%=@the_longitude%>);
-      var mapOptions = {
-        zoom: 15,
-        center: myLatlng
-      }
-      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-      var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Hello World!'
-      });
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
-
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-
 
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -84,7 +63,7 @@
               <li><%= link_to 'Delete account', registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></li>
             </ul>
           </li>
-        <li><div="list-button"><a href="/apartments/new" class="btn btn-primary btn-xs">List New Apartment</a></div></li>
+        <li><div="  "><a href="/apartments/new" class="btn btn-primary btn-xs">List New Apartment</a></div></li>
 
 
         <% else %>
@@ -121,6 +100,10 @@
     dateFormat: "yy-mm-dd"});
   });
   </script>
+
+
+
+
 
 </body>
 </html>

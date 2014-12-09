@@ -13,6 +13,7 @@
 
       <% @apartments.each do |apartment| %>
 
+
         <div class="entry-container">
 
           <div class = "entry-left">
@@ -24,6 +25,7 @@
               </ul>
           </div>
 
+<a href="/apartments/<%=apartment.id%>">
           <div class = "entry-mid">
             <h2><%= apartment.headline%></h2>
             <ul>
@@ -50,7 +52,7 @@
               </li>
             </ul>
           </div>
-
+      </a>
           <div class = "entry-right">
             <div class = "entry-indicator">
               <% if current_user %>
@@ -74,7 +76,9 @@
           </div>
 
         </div>
+
       <% end %>
+
     </div>
 
     <div class="column3-padding">

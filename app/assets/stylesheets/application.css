@@ -14,7 +14,9 @@
  *= require_self
  */
 
-
+a .entry-mid {
+  color: black;
+}
 
 table {
   width: 100%;
