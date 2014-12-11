@@ -3,13 +3,27 @@ require 'json'
 
 class ApartmentsController < ApplicationController
 
+  before_action :set_apartment, :only => [:show, :edit, :update, :delete]
+
+  before_action :current_user_must_be_owner, :only => [:edit, :update, :destroy]
+
+  def set_apartment
+    @apartment = Apartment.find(params[:id])
+  end
+
+
+  def current_user_must_be_owner
+    if @apartment.user != current_user
+        redirect_to root_url, :notice => "Nice Try Sucker"
+    end
+  end
+
   def index
     @search = Apartment.search(params[:q])
     @apartments = @search.result
   end
 
   def show
-    @apartment = Apartment.find(params[:id])
     apartment_address = @apartment.streetadd + " Chicago IL " + @apartment.zip.to_s
     url_safe_address = URI.encode(apartment_address)
     full_url = "http://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_address
@@ -59,12 +73,9 @@ class ApartmentsController < ApplicationController
   end
 
   def edit
-    @apartment = Apartment.find(params[:id])
   end
 
   def update
-    @apartment = Apartment.find(params[:id])
-
     @apartment.apttype = params[:apttype]
     @apartment.size = params[:size]
     @apartment.price = params[:price]

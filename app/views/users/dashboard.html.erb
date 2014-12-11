@@ -78,7 +78,7 @@
 
     <% else %>
       <% Apartment.all.each do |apartment| %>
-        <% if current_user.favorites.pluck(:apartment_id).include? apartment.id %>
+        <% if current_user.favorite_apartments.include?(apartment) %>
           <div class="entry-container">
             <div class = "entry-left-user">
             <ul>
