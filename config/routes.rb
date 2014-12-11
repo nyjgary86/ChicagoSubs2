@@ -57,11 +57,11 @@ Rails.application.routes.draw do
   get('/users/:id', { :controller => 'users', :action => 'show' })
 
   # UPDATE
-  # get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
-  # get('/update_user/:id', { :controller => 'users', :action => 'update' })
+  get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
+  get('/update_user/:id', { :controller => 'users', :action => 'update' })
 
   # DELETE
-  # get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
+  get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
   #------------------------------
 
 

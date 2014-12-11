@@ -16,13 +16,9 @@
       <h4><%=current_user.university.name%></h4>
       <br>
       <p><%=current_user.introduction%></p>
-        <a href="#" class="btn btn-warning">
+        <a href="/users/edit_profile" class="btn btn-warning">
           Edit Account
           <i class="fa fa-edit"></i>
-        </a>
-        <a href="#" class="btn btn-danger">
-          Delete Account
-          <i class="fa fa-trash-o"></i>
         </a>
     </div>
 
@@ -60,7 +56,7 @@
           <li>
             <div class="entry-neighborhood">
               <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-              <%= apartment.neighborhood.name%>
+              <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
             </div>
             <div class="clearfix"></div>
           </li>
@@ -130,7 +126,7 @@
           <li>
             <div class="entry-neighborhood">
               <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-              <%= apartment.neighborhood.name%>
+              <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
             </div>
             <div class="clearfix"></div>
           </li>
@@ -156,7 +152,8 @@
 
         <div class = "entry-edit-right">
             <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
-            <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+            <a href="/delete_favorite/<%= Favorite.find_by(apartment_id: apartment.id, favorited_by_id: current_user.id).id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+
         </div>
 
       </div>

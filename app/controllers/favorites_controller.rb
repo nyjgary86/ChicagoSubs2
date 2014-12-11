@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
     @favorite.favorited_by_id = params[:favorited_by_id]
 
     if @favorite.save
-      redirect_to "/favorites", :notice => "Favorite created successfully."
+      redirect_to "/users/dashboard", :notice => "Favorite created successfully."
     else
       render 'new'
     end
@@ -45,6 +45,6 @@ class FavoritesController < ApplicationController
 
     @favorite.destroy
 
-    redirect_to "/favorites", :notice => "Favorite deleted."
+    redirect_to "/users/dashboard", :notice => "Favorite deleted."
   end
 end
