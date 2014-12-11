@@ -267,8 +267,6 @@ ul {
 
 .image-avatar {
   border-radius: 15%;
-  width: 150px;
-  height: 150px;
   display: block;
   margin-left: auto;
   margin-right: auto
@@ -276,10 +274,7 @@ ul {
 
 .image-avatar-small {
   border-radius: 15%;
-  width: 23px;
-  height: 23px;
-  margin-left: 0;
-  margin-right: 0
+  margin: 0;
 }
 
 .image-hero {

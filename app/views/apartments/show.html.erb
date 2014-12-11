@@ -154,7 +154,7 @@
         <div class="details-contact-container">
           <h2>Get to know your host:</h2>
           <br>
-          <img class = "image-avatar" src=<%=@apartment.user.profile_pic%>>
+          <img class = "image-avatar" src=<%="http://res.cloudinary.com/nyjgary/image/facebook/w_180,h_180,c_fill,g_face/" + @apartment.user.profile_pic + ".jpg"%>>
           <h1><%=@apartment.user.first_name%></h1>
           <h4><%=@apartment.user.university.name%></h4>
           <br>

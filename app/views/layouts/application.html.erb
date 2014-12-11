@@ -52,7 +52,7 @@
         <% if current_user.present? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <img class = "image-avatar-small" src=<%= current_user.profile_pic %>>&nbsp;
+            <img class = "image-avatar-small" src=<%= "http://res.cloudinary.com/nyjgary/image/facebook/w_23,h_23,c_fill,g_face/" + current_user.profile_pic + ".jpg" %>>&nbsp;
             <%= current_user.first_name %>&nbsp;<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="/users/dashboard">My Dashboard</a></li>

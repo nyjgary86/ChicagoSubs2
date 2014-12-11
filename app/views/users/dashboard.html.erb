@@ -10,7 +10,7 @@
     </div>
 
     <div class="details-contact-container">
-      <img class = "image-avatar" src=<%=current_user.profile_pic%>>
+      <img class = "image-avatar" src="<%="http://res.cloudinary.com/nyjgary/image/facebook/w_180,h_180,c_fill,g_face/" + current_user.profile_pic + ".jpg" %>">
 
       <h1><%=current_user.first_name%> <%=current_user.last_name%></h1>
       <h4><%=current_user.university.name%></h4>
@@ -76,7 +76,7 @@
           <li>
             <div class="entry-period">
               <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-              <%= apartment.startdate %> - <%= apartment.enddate %>
+              <%= apartment.startdate.strftime('%v') %> to <%= apartment.enddate.strftime('%v') %>
             </div>
             <div class="clearfix"></div>
           </li>
