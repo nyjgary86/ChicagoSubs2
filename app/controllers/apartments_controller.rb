@@ -56,7 +56,7 @@ class ApartmentsController < ApplicationController
     @apartment.user_id = params[:user_id]
 
     if @apartment.save
-      redirect_to "/apartments", :notice => "Apartment created successfully."
+      redirect_to "/apartments", :notice => "Apartment listing created successfully."
     else
       render 'new'
     end
@@ -96,7 +96,7 @@ class ApartmentsController < ApplicationController
     @apartment.user_id = params[:user_id]
 
     if @apartment.save
-      redirect_to "/apartments", :notice => "Apartment updated successfully."
+      redirect_to "/apartments", :notice => "Apartment listing updated successfully."
     else
       render 'edit'
     end
@@ -107,6 +107,6 @@ class ApartmentsController < ApplicationController
 
     @apartment.destroy
 
-    redirect_to "/apartments", :notice => "Apartment deleted."
+    redirect_to "/apartments", :notice => "Apartment listing deleted."
   end
 end
