@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  # Root URLs
+
+  devise_for :users
+
+  authenticated :user do
+    root :to => 'apartments#index', :as => :authenticated_root
+  end
+  root :to => redirect('/users/sign_in')
+
   # Routes for the Favorite resource:
   # CREATE
   get('/favorites/new', { :controller => 'favorites', :action => 'new' })
@@ -16,13 +25,6 @@ Rails.application.routes.draw do
   # DELETE
   get('/delete_favorite/:id', { :controller => 'favorites', :action => 'destroy' })
   #------------------------------
-
-  devise_for :users
-
-  authenticated :user do
-    root :to => 'apartments#index', :as => :authenticated_root
-  end
-  root :to => redirect('/users/sign_in')
 
   # Routes for the Apartment resource:
   # CREATE

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205190504) do
+ActiveRecord::Schema.define(version: 20141211064622) do
 
   create_table "apartments", force: true do |t|
     t.string   "apttype"

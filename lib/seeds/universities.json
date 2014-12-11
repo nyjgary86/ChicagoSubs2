@@ -1,9 +1,6 @@
 [
   {
-    "university":"Adler School of Professional Psychology"
-  },
-  {
-    "university":"American Academy of Art"
+    "university":"Aarhus University"
   },
   {
     "university":"Argosy University-Chicago"
@@ -12,10 +9,16 @@
     "university":"Argosy University-Schaumburg"
   },
   {
+    "university":"Arizona State University"
+  },
+  {
     "university":"Augustana College"
   },
   {
     "university":"Aurora University"
+  },
+  {
+    "university":"Australian National University"
   },
   {
     "university":"Benedictine University"
@@ -24,34 +27,34 @@
     "university":"Blackburn College"
   },
   {
-    "university":"Blessing Rieman College of Nursing"
+    "university":"Boston University"
   },
   {
     "university":"Bradley University"
   },
   {
-    "university":"Catholic Theological Union at Chicago"
+    "university":"Brown University"
   },
   {
-    "university":"Chamberlain College of Nursing_Addison Campus"
+    "university":"California Institute of Technology"
   },
   {
-    "university":"Chicago School of Professional Psychology"
+    "university":"Carnegie Mellon University"
   },
   {
     "university":"Chicago State University"
   },
   {
-    "university":"Chicago Theological Seminary"
-  },
-  {
-    "university":"Christian Life College"
-  },
-  {
     "university":"Columbia College Chicago"
   },
   {
+    "university":"Columbia University"
+  },
+  {
     "university":"Concordia University"
+  },
+  {
+    "university":"Cornell University"
   },
   {
     "university":"DePaul University"
@@ -61,6 +64,9 @@
   },
   {
     "university":"Dominican University"
+  },
+  {
+    "university":"Duke University"
   },
   {
     "university":"East-West University"
@@ -75,10 +81,16 @@
     "university":"Erikson Institute"
   },
   {
+    "university":"ETH Zurich"
+  },
+  {
     "university":"Eureka College"
   },
   {
-    "university":"Garrett-Evangelical Theological Seminary"
+    "university":"Georgia Institute of Technology"
+  },
+  {
+    "university":"Ghent University"
   },
   {
     "university":"Governors State University"
@@ -87,16 +99,16 @@
     "university":"Greenville College"
   },
   {
-    "university":"Harrington College of Design"
+    "university":"Harvard University"
   },
   {
-    "university":"Hebrew Theological College"
+    "university":"Hebrew University of Jerusalem"
+  },
+  {
+    "university":"Heidelberg University"
   },
   {
     "university":"Illinois College"
-  },
-  {
-    "university":"Illinois College of Optometry"
   },
   {
     "university":"Illinois Institute of Technology"
@@ -108,43 +120,37 @@
     "university":"Illinois Wesleyan University"
   },
   {
-    "university":"Ingalls Memorial Hospital Dietetic Internship"
+    "university":"Imperial College London"
   },
   {
-    "university":"Institute for Clinical Social Work"
-  },
-  {
-    "university":"International Academy of Design and Technology"
-  },
-  {
-    "university":"ITT Technical Institute-Burr Ridge"
-  },
-  {
-    "university":"ITT Technical Institute-Mount Prospect"
-  },
-  {
-    "university":"ITT Technnical Institute-Orland Park"
+    "university":"Johns Hopkins University"
   },
   {
     "university":"Judson University"
   },
   {
+    "university":"Karolinska Institutet"
+  },
+  {
     "university":"Kendall College"
   },
   {
-    "university":"Knowledge Systems Institute"
+    "university":"King's College London"
   },
   {
     "university":"Knox College"
   },
   {
+    "university":"KU Leuven"
+  },
+  {
+    "university":"Kyoto University"
+  },
+  {
     "university":"Lake Forest College"
   },
   {
-    "university":"Lake Forest Graduate School of Management"
-  },
-  {
-    "university":"Lakeview College of Nursing"
+    "university":"Leiden University"
   },
   {
     "university":"Lewis University"
@@ -153,31 +159,25 @@
     "university":"Lexington College"
   },
   {
-    "university":"Lincoln Christian College and Seminary"
-  },
-  {
     "university":"Lincoln College"
   },
   {
     "university":"Loyola University Chicago"
   },
   {
-    "university":"Lutheran School of Theology at Chicago"
-  },
-  {
     "university":"MacMurray College"
   },
   {
-    "university":"McCormick Theological Seminary"
+    "university":"Massachusetts Institute of Technology"
+  },
+  {
+    "university":"McGill University"
   },
   {
     "university":"McKendree University"
   },
   {
-    "university":"Meadville Lombard Theological School"
-  },
-  {
-    "university":"Methodist College of Nursing"
+    "university":"McMaster University"
   },
   {
     "university":"Midstate College"
@@ -192,10 +192,13 @@
     "university":"Monmouth College"
   },
   {
-    "university":"National University of Health Sciences"
+    "university":"Moscow State University"
   },
   {
     "university":"National-Louis University"
+  },
+  {
+    "university":"New York University"
   },
   {
     "university":"North Central College"
@@ -210,22 +213,37 @@
     "university":"Northern Illinois University"
   },
   {
-    "university":"NorthShore University HealthSystems School of Nurse Anesthesia"
+    "university":"Northwestern University"
   },
   {
-    "university":"Northwestern University"
+    "university":"Ohio State University"
   },
   {
     "university":"Olivet Nazarene University"
   },
   {
-    "university":"Pacific College of Oriental Medicine"
+    "university":"Osaka University"
+  },
+  {
+    "university":"Pennsylvania State University"
+  },
+  {
+    "university":"Princeton University"
+  },
+  {
+    "university":"Purdue University"
   },
   {
     "university":"Quincy University"
   },
   {
+    "university":"Rice University"
+  },
+  {
     "university":"Robert Morris College"
+  },
+  {
+    "university":"Rockefeller University"
   },
   {
     "university":"Rockford College"
@@ -240,22 +258,16 @@
     "university":"Rush University"
   },
   {
-    "university":"Saint Anthony College of Nursing"
+    "university":"Rutgers University"
   },
   {
     "university":"Saint Augustine College"
-  },
-  {
-    "university":"Saint Francis Medical Center College of Nursing"
   },
   {
     "university":"Saint Xavier University"
   },
   {
     "university":"School of the Art Institute of Chicago"
-  },
-  {
-    "university":"Seabury-Western Theological Seminary"
   },
   {
     "university":"Shimer College"
@@ -273,7 +285,22 @@
     "university":"St Johns College"
   },
   {
+    "university":"Stanford University"
+  },
+  {
+    "university":"Stockholm University"
+  },
+  {
+    "university":"Swiss Federal Institute of Technology in Lausanne"
+  },
+  {
+    "university":"Technion _ Israel Institute of Technology"
+  },
+  {
     "university":"Telshe Yeshiva-Chicago"
+  },
+  {
+    "university":"Texas A&M University"
   },
   {
     "university":"The Illinois Institute of Art-Chicago"
@@ -294,7 +321,73 @@
     "university":"Trinity International University"
   },
   {
+    "university":"University College London"
+  },
+  {
+    "university":"University of Arizona"
+  },
+  {
+    "university":"University of Basel"
+  },
+  {
+    "university":"University of Bonn"
+  },
+  {
+    "university":"University of Bristol"
+  },
+  {
+    "university":"University of British Columbia"
+  },
+  {
+    "university":"University of California, Berkeley"
+  },
+  {
+    "university":"University of California, Davis"
+  },
+  {
+    "university":"University of California, Irvine"
+  },
+  {
+    "university":"University of California, Los Angeles"
+  },
+  {
+    "university":"University of California, San Diego"
+  },
+  {
+    "university":"University of California, San Francisco"
+  },
+  {
+    "university":"University of California, Santa Barbara"
+  },
+  {
+    "university":"University of California, Santa Cruz"
+  },
+  {
+    "university":"University of Cambridge"
+  },
+  {
     "university":"University of Chicago"
+  },
+  {
+    "university":"University of Colorado"
+  },
+  {
+    "university":"University of Copenhagen"
+  },
+  {
+    "university":"University of Edinburgh"
+  },
+  {
+    "university":"University of Florida"
+  },
+  {
+    "university":"University of Geneva"
+  },
+  {
+    "university":"University of Groningen"
+  },
+  {
+    "university":"University of Helsinki"
   },
   {
     "university":"University of Illinois at Chicago"
@@ -306,13 +399,103 @@
     "university":"University of Illinois at Urbana-Champaign"
   },
   {
+    "university":"University of Manchester"
+  },
+  {
+    "university":"University of Maryland, College Park"
+  },
+  {
+    "university":"University of Melbourne"
+  },
+  {
+    "university":"University of Michigan, Ann Arbor"
+  },
+  {
+    "university":"University of Minnesota, Twin Cities"
+  },
+  {
+    "university":"University of Munich"
+  },
+  {
+    "university":"University of North Carolina at Chapel Hill"
+  },
+  {
+    "university":"University of Oslo"
+  },
+  {
+    "university":"University of Oxford"
+  },
+  {
+    "university":"University of Paris-Sud 11"
+  },
+  {
+    "university":"University of Pennsylvania"
+  },
+  {
+    "university":"University of Pittsburgh"
+  },
+  {
+    "university":"University of Queensland"
+  },
+  {
+    "university":"University of Rochester"
+  },
+  {
     "university":"University of Saint Mary of the Lake"
+  },
+  {
+    "university":"University of Southern California"
   },
   {
     "university":"University of St Francis"
   },
   {
+    "university":"University of Strasbourg"
+  },
+  {
+    "university":"University of Texas at Austin"
+  },
+  {
+    "university":"University of Texas Southwestern Medical Center"
+  },
+  {
+    "university":"University of Tokyo"
+  },
+  {
+    "university":"University of Toronto"
+  },
+  {
+    "university":"University of Utah"
+  },
+  {
+    "university":"University of Washington"
+  },
+  {
+    "university":"University of Western Australia"
+  },
+  {
+    "university":"University of Wisconsin_Madison"
+  },
+  {
+    "university":"University of Zurich"
+  },
+  {
+    "university":"Uppsala University"
+  },
+  {
+    "university":"Utrecht University"
+  },
+  {
+    "university":"Vanderbilt University"
+  },
+  {
     "university":"VanderCook College of Music"
+  },
+  {
+    "university":"VU University Amsterdam"
+  },
+  {
+    "university":"Washington University in St. Louis"
   },
   {
     "university":"West Suburban College of Nursing"
@@ -321,18 +504,9 @@
     "university":"Western Illinois University"
   },
   {
-    "university":"Westwood College-Chicago Loop"
-  },
-  {
-    "university":"Westwood College-Dupage"
-  },
-  {
-    "university":"Westwood College-O'Hare Airport"
-  },
-  {
-    "university":"Westwood College-River Oaks"
-  },
-  {
     "university":"Wheaton College"
+  },
+  {
+    "university":"Yale University"
   }
 ]

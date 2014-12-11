@@ -12,7 +12,7 @@ neighborhood_hashes = JSON.parse(open(neighborhoods_file).read)
 Neighborhood.destroy_all
 neighborhood_hashes.each do |neighborhood_hash|
   d = Neighborhood.new
-  d.neighborhood = neighborhood_hash["neighborhood"]
+  d.name = neighborhood_hash["neighborhood"]
   d.district = neighborhood_hash["district"]
   d.save
 end
@@ -24,7 +24,7 @@ university_hashes = JSON.parse(open(universities_file).read)
 University.destroy_all
 university_hashes.each do |university_hash|
   d = University.new
-  d.university = university_hash["university"]
+  d.name = university_hash["university"]
   d.save
 end
 puts "There are now #{University.count} rows in the universities table."

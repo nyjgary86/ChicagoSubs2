@@ -13,7 +13,7 @@ class Apartment < ActiveRecord::Base
   validates :city, :presence => true
   validates :state, :presence => true
   validates :zip, :presence => true
-  validates :headline, :presence => true, length: { maximum: 40 }
+  validates :headline, :presence => true, length: { maximum: 50 }
   validates :description, :presence => true
   validates :pictureurl, :presence => true
   validates :user_id, :presence => true

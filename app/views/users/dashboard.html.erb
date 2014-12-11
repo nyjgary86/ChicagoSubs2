@@ -146,7 +146,7 @@
           <li>
             <div class="entry-period">
               <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-              <%= apartment.startdate %> - <%= apartment.enddate %>
+              <%= apartment.startdate.strftime('%v') %> - <%= apartment.enddate.strftime('%v') %>
             </div>
             <div class="clearfix"></div>
           </li>
@@ -156,7 +156,6 @@
 
         <div class = "entry-edit-right">
             <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
-            <a href="/apartments/<%= apartment.id %>/edit" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
             <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
         </div>
 
