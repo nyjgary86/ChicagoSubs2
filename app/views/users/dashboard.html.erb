@@ -4,164 +4,125 @@
 
 <div class="row">
   <div class="column4-padding">
-
     <div class="header">
     My Profile
     </div>
-
     <div class="details-contact-container">
       <img class = "image-avatar" src="<%="http://res.cloudinary.com/nyjgary/image/facebook/w_180,h_180,c_fill,g_face/" + current_user.profile_pic + ".jpg" %>">
-
       <h1><%=current_user.first_name%> <%=current_user.last_name%></h1>
       <h4><%=current_user.university.name%></h4>
       <br>
       <p><%=current_user.introduction%></p>
-        <a href="/users/edit_profile" class="btn btn-warning">
-          Edit Account
-          <i class="fa fa-edit"></i>
-        </a>
+        <a href="/users/edit_profile" class="btn btn-warning">Edit Account<i class="fa fa-edit"></i></a>
     </div>
-
   </div>
 
   <div class="column6">
-
     <div class="header"> My Listings </div>
 
     <% if current_user.apartments.count == 0 %>
-
-    No apartment listed yet.
+      No apartment listed yet.
 
     <% else %>
-
-    <% current_user.apartments.each do |apartment| %>
-
-    <div class="entry-container">
-
-      <div class = "entry-left-user">
+      <% current_user.apartments.each do |apartment| %>
+      <div class="entry-container">
+        <div class = "entry-left-user">
+            <ul>
+              <li>
+                <img class="image-listing" src=<%= apartment.pictureurl %>>
+              </li>
+            </ul>
+        </div>
+        <div class = "entry-mid-user">
+          <h2><%= apartment.headline%></h2>
+          <div class = "entry-edit-left">
           <ul>
             <li>
-              <img class="image-listing" src=<%= apartment.pictureurl %>>
-
+              <div class="entry-neighborhood">
+                <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
+              </div>
+              <div class="clearfix"></div>
+            </li>
+            <li>
+              <div class="entry-type">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                <%= apartment.apttype %> (<%= apartment.size %>)
+              </div>
+              <div class="clearfix"></div>
+            </li>
+            <li>
+              <div class="entry-period">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                <%= apartment.startdate.strftime('%v') %> to <%= apartment.enddate.strftime('%v') %>
+              </div>
+              <div class="clearfix"></div>
             </li>
           </ul>
-      </div>
-
-      <div class = "entry-mid-user">
-        <h2><%= apartment.headline%></h2>
-
-        <div class = "entry-edit-left">
-        <ul>
-
-          <li>
-            <div class="entry-neighborhood">
-              <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-              <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
-            </div>
-            <div class="clearfix"></div>
-          </li>
-
-          <li>
-            <div class="entry-type">
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-              <%= apartment.apttype %> (<%= apartment.size %>)
-            </div>
-            <div class="clearfix"></div>
-          </li>
-
-          <li>
-            <div class="entry-period">
-              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-              <%= apartment.startdate.strftime('%v') %> to <%= apartment.enddate.strftime('%v') %>
-            </div>
-            <div class="clearfix"></div>
-          </li>
-
-        </ul>
+          </div>
+          <div class = "entry-edit-right">
+            <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
+            <a href="/apartments/<%= apartment.id %>/edit" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+            <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+          </div>
         </div>
-
-        <div class = "entry-edit-right">
-          <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
-          <a href="/apartments/<%= apartment.id %>/edit" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-          <a href="/delete_apartment/<%= apartment.id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-        </div>
-
       </div>
-    </div>
+      <% end %>
     <% end %>
-    <% end %>
-
     <p>&nbsp;</p>
 
     <div class="header"> My Favorites </div>
 
     <% if current_user.favorites.count == 0 %>
-
-    No apartment favorited yet.
+      No apartment favorited yet.
 
     <% else %>
-
-
-    <% Apartment.all.each do |apartment| %>
-    <% if current_user.favorites.pluck(:apartment_id).include? apartment.id %>
-
-    <div class="entry-container">
-
-      <div class = "entry-left-user">
-          <ul>
-            <li>
+      <% Apartment.all.each do |apartment| %>
+        <% if current_user.favorites.pluck(:apartment_id).include? apartment.id %>
+          <div class="entry-container">
+            <div class = "entry-left-user">
+            <ul>
+              <li>
               <img class="image-listing" src=<%= apartment.pictureurl %>>
-
-              </a>
-            </li>
-          </ul>
-      </div>
-
-      <div class = "entry-mid-user">
-        <h2><%= apartment.headline%></h2>
-
-        <div class = "entry-edit-left">
-        <ul>
-
-          <li>
-            <div class="entry-neighborhood">
-              <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-              <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
+              <li>
+            <ul>
             </div>
-            <div class="clearfix"></div>
-          </li>
-
-          <li>
-            <div class="entry-type">
-              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-              <%= apartment.apttype %> (<%= apartment.size %>)
+            <div class = "entry-mid-user">
+              <h2><%= apartment.headline%></h2>
+              <div class = "entry-edit-left">
+              <ul>
+                <li>
+                  <div class="entry-neighborhood">
+                    <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                    <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+                  <div class="entry-type">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    <%= apartment.apttype %> (<%= apartment.size %>)
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li>
+                  <div class="entry-period">
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    <%= apartment.startdate.strftime('%v') %> - <%= apartment.enddate.strftime('%v') %>
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+              </ul>
+              </div>
+              <div class = "entry-edit-right">
+                  <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
+                  <a href="/delete_favorite/<%= Favorite.find_by(apartment_id: apartment.id, favorited_by_id: current_user.id).id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+              </div>
             </div>
-            <div class="clearfix"></div>
-          </li>
-
-          <li>
-            <div class="entry-period">
-              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-              <%= apartment.startdate.strftime('%v') %> - <%= apartment.enddate.strftime('%v') %>
-            </div>
-            <div class="clearfix"></div>
-          </li>
-
-        </ul>
-        </div>
-
-        <div class = "entry-edit-right">
-            <a href="/apartments/<%= apartment.id %>" class="btn btn-primary btn-xs"><i class="fa fa-search-plus"></i></a>
-            <a href="/delete_favorite/<%= Favorite.find_by(apartment_id: apartment.id, favorited_by_id: current_user.id).id %>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
-
-        </div>
-
-      </div>
-    </div>
-
-    <% else %>
-    <% end %>
-    <% end %>
+          </div>
+          <% else %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>

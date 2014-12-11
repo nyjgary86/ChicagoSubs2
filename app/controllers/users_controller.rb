@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-    @users = User.all
-  end
-
   def sign_up
   end
 
@@ -32,6 +28,31 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.email = params[:email]
+    @user.university_id = params[:university_id]
+    @user.introduction = params[:introduction]
+
+    if @user.save
+      redirect_to "/users", :notice => "User updated successfully."
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+
+    @user.destroy
+
+    redirect_to "/users", :notice => "User deleted."
+  end
+
+  # def index
+  #   @users = User.all
+  # end
+
   # def new
   #   @user = User.find(params[:id])
   # end
@@ -54,24 +75,4 @@ class UsersController < ApplicationController
   #   @user = User.find(params[:id])
   # end
 
-  def update
-    @user = User.find(params[:id])
-    @user.email = params[:email]
-    @user.university_id = params[:university_id]
-    @user.introduction = params[:introduction]
-
-    if @user.save
-      redirect_to "/users", :notice => "User updated successfully."
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-
-    @user.destroy
-
-    redirect_to "/users", :notice => "User deleted."
-  end
 end

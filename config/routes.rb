@@ -53,17 +53,16 @@ Rails.application.routes.draw do
   get('/users/edit_profile', { :controller => 'users', :action => 'edit_profile'})
   get('/users/update_profile', { :controller => 'users', :action => 'update_profile'})
 
-  get('/users', { :controller => 'users', :action => 'index' })
-  get('/users/:id', { :controller => 'users', :action => 'show' })
+  # get('/users', { :controller => 'users', :action => 'index' })
+  # get('/users/:id', { :controller => 'users', :action => 'show' })
 
   # UPDATE
-  get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
-  get('/update_user/:id', { :controller => 'users', :action => 'update' })
+  # get('/users/:id/edit', { :controller => 'users', :action => 'edit' })
+  # get('/update_user/:id', { :controller => 'users', :action => 'update' })
 
   # DELETE
-  get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
+  # get('/delete_user/:id', { :controller => 'users', :action => 'destroy' })
   #------------------------------
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

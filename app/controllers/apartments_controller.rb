@@ -19,10 +19,6 @@ class ApartmentsController < ApplicationController
     @the_longitude = parsed_data["results"][0]["geometry"]["location"]["lng"].to_s
   end
 
-  def current_user_apartments
-    @apartments = current_user.apartments
-  end
-
   def new
     @apartment = Apartment.new
   end

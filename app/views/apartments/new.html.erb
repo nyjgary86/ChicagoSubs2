@@ -11,7 +11,6 @@
   <h1>New Listing</h1>
 </div>
 
-
 <div class="row">
   <div class="col-md-offset-3 col-md-6">
     <form action="/create_apartment" class="form-horizontal">
@@ -19,7 +18,9 @@
         <div class="panel-heading">
           <h3 class="panel-title">The Essentials</h3>
         </div>
+
         <div class="panel-body">
+
           <!-- Label and input for apttype -->
           <div class="form-group">
             <label for="apttype" class="col-sm-2 control-label">
@@ -87,6 +88,7 @@
             <%= select_tag("neighborhood_id", options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name"),{ :class => 'form-control'}) %>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -94,7 +96,9 @@
       <div class="panel-heading">
         <h3 class="panel-title">Where exactly do you live?</h3>
       </div>
+
       <div class="panel-body">
+
           <!-- Label and input for streetadd -->
           <div class="form-group">
             <label for="streetadd" class="col-sm-2 control-label">
@@ -115,7 +119,7 @@
             </div>
           </div>
 
-          <!-- Label and input for city -->
+          <!-- Hidden inputs - automatically include Chicago, IL -->
 
           <input type="hidden" id="city" name="city" value="Chicago"><%= @apartment.city %>
           <input type="hidden" id="state" name="state" value="IL"><%= @apartment.state %>
@@ -129,6 +133,7 @@
               <input type="number" id="zip" name="zip" class="form-control" value="<%= @apartment.zip %>">
             </div>
           </div>
+
         </div>
       </div>
 
@@ -136,7 +141,9 @@
         <div class="panel-heading">
           <h3 class="panel-title">What amentities are there?</h3>
         </div>
+
         <div class="panel-body">
+
           <!-- Label and input for furnished -->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -233,7 +240,7 @@
             </div>
           </div>
 
-          <!-- Label and input for laundryu -->
+          <!-- Label and input for laundry in unit -->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
@@ -245,7 +252,7 @@
             </div>
           </div>
 
-          <!-- Label and input for laundryb -->
+          <!-- Label and input for laundry in building -->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
@@ -263,6 +270,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Describe your apartment</h3>
       </div>
+
       <div class="panel-body">
 
           <!-- Label and input for headline -->
@@ -271,7 +279,7 @@
               Headline
             </label>
             <div class="col-sm-10">
-              <textarea id="headline" name="headline" placeholder="Headline" class="form-control" rows="1"><%= @apartment.headline %></textarea>
+              <textarea id="headline" name="headline" placeholder="Maximum 50 characters" class="form-control" rows="1"><%= @apartment.headline %></textarea>
             </div>
           </div>
 
@@ -281,7 +289,7 @@
               Description
             </label>
             <div class="col-sm-10">
-              <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @apartment.description %></textarea>
+              <textarea id="description" name="description" class="form-control" rows="3"><%= @apartment.description %></textarea>
             </div>
           </div>
 
@@ -295,7 +303,7 @@
             </div>
           </div>
 
-          <!-- Hidden input for user id -->
+          <!-- Hidden input: automatically takes current user id -->
           <input type="hidden" id="user_id" name="user_id" value=<%= current_user.id %>>
 
         </div>

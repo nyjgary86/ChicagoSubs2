@@ -1,11 +1,16 @@
   <div class="page-header">
     <h1><%= @apartment.headline %>
+
       <% if current_user %>
+
+
         <% if @apartment.user_id.to_i == current_user.id %>
           <a href="/apartments/<%=@apartment.id%>/edit" class="btn btn-success">Edit Your Listing</a>
           </form>
+
         <% elsif current_user.favorites.pluck(:apartment_id).include? @apartment.id %>
           <a href="/apartments/<%=@apartment.id%>" class="btn btn-danger">Your Favorite</a>
+
         <% else %>
           <form action="/create_favorite">
             <input type="hidden" name="apartment_id" id="apartment_id" value=<%= @apartment.id %>>
@@ -13,6 +18,7 @@
             <input type="submit" value="Add to Favorites" class="btn btn-default">
           </form>
         <% end %>
+
       <% else %>
       <% end %>
     </h1>

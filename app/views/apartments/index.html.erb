@@ -1,126 +1,118 @@
-
-
 <body>
   <div class="content-container">
-
     <div class="column7">
-
       <div class="page-header">
-        <h1>Apartments
-        </h1>
+        <h1>Apartments</h1>
       </div>
 
       <% @apartments.each do |apartment| %>
 
+      <div class="entry-container">
 
-        <div class="entry-container">
-
-          <div class = "entry-left">
-              <ul>
-                <li>
-                  <a href="/apartments/<%=apartment.id%>"><img class="image-listing" src=<%= apartment.pictureurl %>></a>
-                  <div class="clearfix"></div>
-                </li>
-              </ul>
-          </div>
-
-<a href="/apartments/<%=apartment.id%>">
-          <div class = "entry-mid">
-            <h2><%= apartment.headline%></h2>
+        <div class = "entry-left">
             <ul>
               <li>
-                <div class="entry-neighborhood">
-                  <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-                  <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
-                  </div>
-                <div class="clearfix"></div>
-              </li>
-              <li>
-                <div class="entry-type">
-                  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                  <%= apartment.apttype %>: <%= apartment.size %>
-                </div>
-                <div class="clearfix"></div>
-              </li>
-              <li>
-                <div class="entry-period">
-                  <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                  <%= apartment.startdate.strftime('%v') %>  to  <%= apartment.enddate.strftime('%v') %>
-                </div>
-                <div class="clearfix"></div>
+                <a href="/apartments/<%=apartment.id%>"><img class="image-listing" src=<%= apartment.pictureurl %>></a>
               </li>
             </ul>
-          </div>
-      </a>
-
-          <div class = "entry-right">
-            <div class = "entry-indicator">
-              <% if current_user %>
-
-                <% if apartment.user_id.to_i == current_user.id %>
-                  <a href="/apartments/<%=apartment.id%>/edit" class="btn btn-success btn-xs btn-block">Edit Your Listing</a>
-
-                <% elsif current_user.favorites.pluck(:apartment_id).include? apartment.id %>
-                  <a href="/apartments/<%=apartment.id%>" class="btn btn-danger btn-xs btn-block">Your Favorite</a>
-
-                <% else %>
-                  <form action="/create_favorite">
-                    <input type="hidden" name="apartment_id" id="apartment_id" value=<%= apartment.id %>>
-                    <input type="hidden" name="favorited_by_id" id="favorited_by_id" value=<%= current_user.id %>>
-                    <input type="submit" value="Add to Favorites" class="btn btn-default btn-xs btn-block">
-                  </form>
-                <% end %>
-
-              <% else %>
-              <% end %>
-            </div>
-            <h3>$<%= apartment.price %></h3>
-            <h4>per month</h4>
-          </div>
-
         </div>
 
-      <% end %>
+        <a href="/apartments/<%=apartment.id%>">
+        <div class = "entry-mid">
+          <h2><%= apartment.headline%></h2>
+          <ul>
+            <li>
+              <div class="entry-neighborhood">
+                <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                <%= apartment.streetadd %> ( <%= apartment.neighborhood.name %>)
+              </div>
+              <div class="clearfix"></div>
+            </li>
+            <li>
+              <div class="entry-type">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                <%= apartment.apttype %>: <%= apartment.size %>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+            <li>
+              <div class="entry-period">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                <%= apartment.startdate.strftime('%v') %>  to  <%= apartment.enddate.strftime('%v') %>
+              </div>
+              <div class="clearfix"></div>
+            </li>
+          </ul>
+        </div>
+        </a>
 
+        <div class = "entry-right">
+          <div class = "entry-indicator">
+            <% if current_user %>
+
+              <!-- Show "Edit Your Listing" if apartment belongs to user -->
+              <% if apartment.user_id.to_i == current_user.id %>
+                <a href="/apartments/<%=apartment.id%>/edit" class="btn btn-success btn-xs btn-block">Edit Your Listing</a>
+
+              <!-- Show "Your Favorites" if user has previous favorited the apartment  -->
+              <% elsif current_user.favorites.pluck(:apartment_id).include? apartment.id %>
+                <a href="/apartments/<%=apartment.id%>" class="btn btn-danger btn-xs btn-block">Your Favorite</a>
+
+              <!-- Otherwise, invite user to add the apartment to his favorites  -->
+              <% else %>
+                <form action="/create_favorite">
+                  <input type="hidden" name="apartment_id" id="apartment_id" value=<%= apartment.id %>>
+                  <input type="hidden" name="favorited_by_id" id="favorited_by_id" value=<%= current_user.id %>>
+                  <input type="submit" value="Add to Favorites" class="btn btn-default btn-xs btn-block">
+                </form>
+
+              <% end %>
+            <% else %>
+            <% end %>
+          </div>
+          <h3>$<%= apartment.price %></h3>
+          <h4>per month</h4>
+        </div>
+      </div>
+    <% end %>
     </div>
 
     <div class="column3-padding">
+
       <div class="page-header">
         <h1>Filter Listings</h1>
       </div>
+
       <div class="filter-container">
+        <%= search_form_for @search do |f| %>
+        <div class="form-group">
 
-          <%= search_form_for @search do |f| %>
-            <div class="form-group">
+          <%= f.label :startdate_gteq, "From:" %>
+          <%= f.search_field :startdate_lteq, :id => "startdate_f", :class => "form-control"  %>
 
-              <%= f.label :startdate_gteq, "From:" %>
-              <%= f.search_field :startdate_lteq, :id => "startdate_f", :class => "form-control"  %>
+          <%= f.label :enddate_gteq, "To:" %>
+          <%= f.search_field :enddate_gteq, :id => "enddate_f", :class => "form-control"  %>
 
-              <%= f.label :enddate_gteq, "To:" %>
-              <%= f.search_field :enddate_gteq, :id => "enddate_f", :class => "form-control"  %>
+          <%= f.label :price_lteq, "Your Monthly Budget:" %>
+          <%= f.search_field :price_lteq, :class => "form-control" %>
 
-              <%= f.label :price_lteq, "Your Monthly Budget:" %>
-              <%= f.search_field :price_lteq, :class => "form-control" %>
+          <%= f.label :apttype_eq, "Apartment Type:" %>
+          <%= f.select :apttype_eq, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
 
-              <%= f.label :apttype_eq, "Apartment Type:" %>
-              <%= f.select :apttype_eq, ["Entire Apartment", "Private Room"], { :include_blank=>true }, { :class => "form-control" } %>
+          <%= f.label :size_eq, "Size:" %>
+          <%= f.select :size_eq, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
 
-              <%= f.label :size_eq, "Size:" %>
-              <%= f.select :size_eq, ["Studio", "1BR", "2BR", "3BR+"], { :include_blank=>true }, { :class => "form-control" } %>
+          <%= f.label :neighborhood_id_eq, "Neighborhood:" %>
+          <%= f.select :neighborhood_id_eq, options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name"), { :include_blank=>true }, { :class => "form-control" } %>
+        </div>
 
-              <%= f.label :neighborhood_id_eq, "Neighborhood:" %>
-              <%= f.select :neighborhood_id_eq, options_from_collection_for_select(Neighborhood.all.order("name ASC"), "id", "name"), { :include_blank=>true }, { :class => "form-control" } %>
-            </div>
+        <div class="form-group">
+          <%= f.submit "Filter"%>
+        </div>
 
-            <div class="form-group">
-              <%= f.submit "Filter"%>
-            </div>
-
-          <% end %>
+      <% end %>
 
       </div>
     </div>
   </div>
 </body>
-
-

@@ -23,6 +23,14 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite = Favorite.find(params[:id])
+
+    @favorite.destroy
+
+    redirect_to "/users/dashboard", :notice => "Favorite deleted."
+  end
+
   # def edit
   #   @favorite = Favorite.find(params[:id])
   # end
@@ -40,11 +48,4 @@ class FavoritesController < ApplicationController
   #   end
   # end
 
-  def destroy
-    @favorite = Favorite.find(params[:id])
-
-    @favorite.destroy
-
-    redirect_to "/users/dashboard", :notice => "Favorite deleted."
-  end
 end
